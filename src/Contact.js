@@ -5,11 +5,14 @@ import React from 'react';
 function Contact() {
     return (
       <div className="Contact">
-        <header className="Contact-header">
-          <p>
-            Contact page here
-          </p>
-        </header>
+        <ul>
+          <li>
+            <a href="https://github.com/BryanSkyyy">Github</a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/bryanpepitoneperez/">LinkedIn</a>
+          </li>
+        </ul>
       </div>
     );
   }
