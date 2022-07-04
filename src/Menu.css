@@ -1,0 +1,23 @@
+.menu {
+    font-size: 14px;
+    background-color: #282c34;
+    border-radius: 15px;
+    padding: 5px 0 5px 0;
+    width: 150px;
+    height: auto;
+    margin: 0;
+  /* use absolute positioning  */
+    position: absolute;
+    list-style: none;
+    box-shadow: 0 0 20px 0 #ccc;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+    color: black;
+  }
+
+.img-thumbnail {
+    opacity: 1;
+    max-width: 100px;
+    max-height: 100px;
+    margin: 5px;
+}
