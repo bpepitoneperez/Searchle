@@ -24,6 +24,10 @@
   height: 100%;
 }
 
+.App-header img {
+  max-height: 95%;
+}
+
 .App-link {
   color: #61dafb;
 }
