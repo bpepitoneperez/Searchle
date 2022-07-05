@@ -1,15 +1,11 @@
 import './Menu.css'
 
-const Menu = ( {chars, show, anchorPoint, clickChar} ) => {
-  let charsList = chars.filter((char) => !char.clicked).map((char) => <li key={char.charName} onClick={clickChar}>
-    <img src={char.imgUrl} alt={char.charName} className='img-thumbnail' />
-  </li>);
+const Menu = ( {show, anchorPoint, clickConfirm} ) => {
+  let y = anchorPoint.y, x = anchorPoint.x
 
-  if (show && charsList.length > 0) {
+  if (show) {
     return (
-      <ul className="menu" style={{ top: anchorPoint.y, left: anchorPoint.x }}>
-        {charsList}
-      </ul>
+      <div className="circle-div" onClick={clickConfirm} style={{ top: `calc(${y}px - 2.5rem)`, left: `calc(${x}px - 2.5rem)`}}>Confirm</div>
     );
   }
   return <></>;

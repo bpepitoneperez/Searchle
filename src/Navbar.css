@@ -1,33 +1,11 @@
-/* nav.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    ul {        
-        display: flex;
-        align-items: center;
-    }
-
-    ul li {
-        margin-right: 20px;
-
-        &:last-child {
-            margin-right: 0px;
-        }
-    }
-}
-
-.navbar-title-div {
-
-}
-
-.navbar-link-div {
+.nav-search-div {
+    font-size: calc(1px + 2vmin);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    border: dashed;
+    align-items: center;
+    color: black;
 }
 
-ul {
-    list-style-type: none;
-} */
+#nav-char-pic {
+    max-height: 8vh;
+}

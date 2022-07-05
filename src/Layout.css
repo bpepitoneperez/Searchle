@@ -4,10 +4,12 @@
     flex-direction: column;
     font-size: calc(10px + 2vmin);
     color: white;
+    min-height: 100vh;
 }
 
 .navbar {
     min-height: 10vh;
+    max-height: 12vh;
     min-width: 100%;
     background-color: #4a4f58
 }

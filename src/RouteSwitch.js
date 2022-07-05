@@ -38,7 +38,7 @@ const db = getFirestore(app);
 
 const RouteSwitch = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter >
       <Routes>
         <Route path="/" element={<Layout />} >
           <Route index element={<App />} />

@@ -2,6 +2,7 @@
   text-align: center;
   width: 100%;
   box-sizing: border-box;
+  min-height: 100%;
 }
 
 .App-header {
@@ -12,11 +13,15 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-  min-height: 100%;
   width: 100%;
 }
 
 .App-header img {
-  width: 98%;
-  padding: 2rem;
+  width: 95%;
+  margin: 3rem;
+}
+
+
+#game-img {
+  box-shadow: 0 0 40px 0 rgb(255, 255, 255);
 }
