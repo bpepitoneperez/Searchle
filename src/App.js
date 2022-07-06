@@ -4,17 +4,9 @@ import Menu from "./Menu";
 import { useOutletContext } from "react-router-dom";
 
 const App = () => {
-  const [anchorPoint, show, handleClickMenu, setShow] = useOutletContext();
+  const [anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin] = useOutletContext();
   const [ clickSpot, setClickSpot] = useState({ x: 0, y: 0 });
-  const [ currentChar, setCurrentChar ] = useState (
-    {
-      charName: "sasuke",
-      imgUrl: "./waldo.jpg",
-      xPos: 15,
-      yPos: 23,
-      clicked: false
-    }
-  )
+  
 
   const handleClick = e => {
     e.preventDefault();
@@ -42,10 +34,7 @@ const App = () => {
     
     if (x1 <= currentChar.xPos && x2 >= currentChar.xPos && y1 <= currentChar.yPos && y2 >= currentChar.yPos)
     {
-      let newChar = currentChar;
-      newChar.clicked = true;
-      setCurrentChar(newChar);
-      console.log(`${newChar.charName} was clicked`)
+      setWin(true);
     }
 
     setShow(false);
@@ -56,7 +45,7 @@ const App = () => {
       <header className="App-header">
         <img id='game-img' src="/testing.jpg" onClick={handleClick} className='img-fluid shadow-4' alt="Where's Waldo1" />
       </header>
-      <Menu show={show} anchorPoint={anchorPoint} clickConfirm={clickConfirm}/>
+      <Menu show={show} win={win} anchorPoint={anchorPoint} clickConfirm={clickConfirm}/>
     </div>
   );
 }

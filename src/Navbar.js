@@ -5,14 +5,25 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-function navbar() {
+const navbar = ({char, win}) => {
+  let navbarText = <Navbar.Text></Navbar.Text>;
+  if (win)
+  {
+    navbarText = <Navbar.Text>
+      You found {char.charName}!
+    </Navbar.Text>
+  }
+  else
+  {
+    navbarText = <Navbar.Text>
+      Searching for: {char.charName} <img src={char.imgUrl} id='nav-char-pic' className='img-thumbnail'  alt={char.charName} />
+    </Navbar.Text>
+  }
   return (
     <Navbar  className="justify-content-center" bg="light" expand="lg">
       <Container>
         <Navbar.Brand href="/">Searchle</Navbar.Brand>
-        <Navbar.Text>
-          Searching for: Sasuke Uchiha <img src="/sasuke uchiha.png" id='nav-char-pic' className='img-thumbnail'  alt="sasuke" />
-        </Navbar.Text>
+        {navbarText}
         <Nav.Link href="" >Artist</Nav.Link>
         
         {/*<Navbar.Toggle aria-controls="basic-navbar-nav" />

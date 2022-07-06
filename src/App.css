@@ -19,9 +19,10 @@
 .App-header img {
   width: 95%;
   margin: 3rem;
+  margin-bottom: 1rem;
 }
 
 
 #game-img {
-  box-shadow: 0 0 40px 0 rgb(255, 255, 255);
+  box-shadow: 0 0 10px 0 rgb(255, 255, 255);
 }
