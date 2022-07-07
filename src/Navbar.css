@@ -1,11 +1,20 @@
-.nav-search-div {
-    font-size: calc(1px + 2vmin);
+.nav-div {
     display: flex;
     flex-direction: row;
     align-items: center;
     color: black;
+    align-items: center;
+    justify-content:space-between;
+    width: 100%;
 }
 
 #nav-char-pic {
     max-height: 8vh;
+}
+
+.nav-content {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

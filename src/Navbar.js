@@ -2,51 +2,20 @@ import React from 'react';
 import "./Navbar.css"
 
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-const navbar = ({char, win}) => {
-  let navbarText = <Navbar.Text></Navbar.Text>;
-  if (win)
-  {
-    navbarText = <Navbar.Text>
-      You found {char.charName}!
-    </Navbar.Text>
-  }
-  else
-  {
-    navbarText = <Navbar.Text>
-      Searching for: {char.charName} <img src={char.imgUrl} id='nav-char-pic' className='img-thumbnail'  alt={char.charName} />
-    </Navbar.Text>
-  }
+const navbar = ({char, timer}) => {
+  
   return (
-    <Navbar  className="justify-content-center" bg="light" expand="lg">
-      <Container>
-        <Navbar.Brand href="/">Searchle</Navbar.Brand>
-        {navbarText}
-        <Nav.Link href="" >Artist</Nav.Link>
-        
-        {/*<Navbar.Toggle aria-controls="basic-navbar-nav" />
-         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/leaderboard">Leaderboard</Nav.Link>
-            <Nav.Link href="/contact">Contact</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse> */}
-      </Container>
+    <Navbar className="justify-content-center"  bg="light" expand="lg">
+      <div className='nav-div'>
+        <Navbar.Brand className='nav-content' href="/">Searchle</Navbar.Brand>
+        <Navbar.Text className='nav-content'>{timer}</Navbar.Text>
+        <Navbar.Text className='nav-content'>
+          Search: {char.charName}
+          <img src={char.imgUrl} id='nav-char-pic' className='img-thumbnail' alt={char.charName} />
+        </Navbar.Text>
+      </div>
     </Navbar>
   );
 }

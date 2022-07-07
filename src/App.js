@@ -4,7 +4,7 @@ import Menu from "./Menu";
 import { useOutletContext } from "react-router-dom";
 
 const App = () => {
-  const [anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin] = useOutletContext();
+  const [anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, setGameOver] = useOutletContext();
   const [ clickSpot, setClickSpot] = useState({ x: 0, y: 0 });
   
 
@@ -35,6 +35,7 @@ const App = () => {
     if (x1 <= currentChar.xPos && x2 >= currentChar.xPos && y1 <= currentChar.yPos && y2 >= currentChar.yPos)
     {
       setWin(true);
+      setGameOver(true);
     }
 
     setShow(false);

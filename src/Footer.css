@@ -20,3 +20,12 @@
 .footer-text {
     font-size: x-small;
 }
+
+.links {
+    color: white;
+    text-decoration: none;
+}
+
+.links:hover {
+    color: white;
+}
