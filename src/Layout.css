@@ -8,8 +8,8 @@
 }
 
 .navbar {
-    min-height: 10vh;
-    max-height: 12vh;
+    min-height: 8vh;
+    max-height: 10vh;
     min-width: 100%;
     background-color: #4a4f58
 }

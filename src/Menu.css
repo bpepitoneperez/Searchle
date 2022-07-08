@@ -1,10 +1,10 @@
 .circle-div {
-    font-size: 14px;
+    font-size: 50%;
     font-weight: bolder;
-    background-color: rgba(6, 65, 121, 0.5);
+    background-color: rgba(37, 45, 53, 0.75);
     border-radius: 50%;
-    width: 5rem;
-    height: 5rem;
+    width: 5em;
+    height: 5em;
     margin: 0;
   /* use absolute positioning  */
     position: absolute;
@@ -16,13 +16,24 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    border:solid;
+    
+    border: dashed;
     border-color: white;
     border-width: 2px;
 }
 
 .circle-div:hover {
   cursor: pointer;
+}
+
+#checkmark {
+  font-size: 3em;
+  color: rgb(75, 211, 75);
+}
+
+#miss-icon {
+  font-size: 3em;
+  color: rgb(202, 17, 17);
 }
 
 /* .circle-div p:hover {

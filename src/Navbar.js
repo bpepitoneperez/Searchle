@@ -1,16 +1,14 @@
 import React from 'react';
 import "./Navbar.css"
-
-import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 
-const navbar = ({char, timer}) => {
+const navbar = ({char, minutes, seconds}) => {
   
   return (
-    <Navbar className="justify-content-center"  bg="light" expand="lg">
+    <Navbar fixed="top" className="justify-content-center"  bg="light" expand="lg">
       <div className='nav-div'>
         <Navbar.Brand className='nav-content' href="/">Searchle</Navbar.Brand>
-        <Navbar.Text className='nav-content'>{timer}</Navbar.Text>
+        <Navbar.Text id='nav-timer' className='nav-content'>{minutes}:{seconds < 10 ?  `0${seconds}` : seconds}</Navbar.Text>
         <Navbar.Text className='nav-content'>
           Search: {char.charName}
           <img src={char.imgUrl} id='nav-char-pic' className='img-thumbnail' alt={char.charName} />

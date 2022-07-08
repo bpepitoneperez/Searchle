@@ -6,13 +6,11 @@ const useContextMenu = () => {
   const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
   const [show, setShow] = useState(false);
 
-  const handleContextMenu = (event) => {
+  const handleClickMenu = (event) => {
       event.preventDefault();
       setAnchorPoint({ x: event.pageX, y: event.pageY });
       setShow(true);
-    }
-
-  const handleClickMenu = e => (show ? setShow(false) : handleContextMenu(e));
+  }
 
   
   return { anchorPoint, show, handleClickMenu, setShow };

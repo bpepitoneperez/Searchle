@@ -4,9 +4,9 @@ import Menu from "./Menu";
 import { useOutletContext } from "react-router-dom";
 
 const App = () => {
-  const [anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, setGameOver] = useOutletContext();
-  const [ clickSpot, setClickSpot] = useState({ x: 0, y: 0 });
-  
+  const [anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, misses, setMisses, endGame] = useOutletContext();
+  const [clickSpot, setClickSpot] = useState({ x: 0, y: 0 });
+  const [miss, setMiss] = useState(false);
 
   const handleClick = e => {
     e.preventDefault();
@@ -35,18 +35,26 @@ const App = () => {
     if (x1 <= currentChar.xPos && x2 >= currentChar.xPos && y1 <= currentChar.yPos && y2 >= currentChar.yPos)
     {
       setWin(true);
-      setGameOver(true);
+      setShow(false);
+      endGame();
     }
-
-    setShow(false);
+    else
+    {
+      setMisses(misses + 1)
+      setMiss(true);
+      setTimeout(() => {
+        setMiss(false);
+        setShow(false);
+      }, 300);
+    }
   }
 
   return (
     <div className="App" >
       <header className="App-header">
         <img id='game-img' src="/testing.jpg" onClick={handleClick} className='img-fluid shadow-4' alt="Where's Waldo1" />
+        <Menu show={show} win={win} anchorPoint={anchorPoint} clickConfirm={clickConfirm} miss={miss}/>
       </header>
-      <Menu show={show} win={win} anchorPoint={anchorPoint} clickConfirm={clickConfirm}/>
     </div>
   );
 }

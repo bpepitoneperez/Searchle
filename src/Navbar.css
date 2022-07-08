@@ -6,10 +6,16 @@
     align-items: center;
     justify-content:space-between;
     width: 100%;
+    font-size: 70%;
 }
 
 #nav-char-pic {
     max-height: 8vh;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 .nav-content {
@@ -17,4 +23,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#nav-timer {
+    font-size: 150%;
 }
