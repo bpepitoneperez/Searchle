@@ -1,8 +1,8 @@
-import './Menu.css'
+import '../Styles/ClickConfirm.css'
 import { MdCheck } from "react-icons/md";
 import { MdClose } from "react-icons/md";
 
-const Menu = ( { show, win, anchorPoint, clickConfirm, miss } ) => {
+const ClickConfirm = ( { show, win, anchorPoint, clickConfirm, miss } ) => {
   let y = anchorPoint.y, x = anchorPoint.x, icon = <MdCheck id='checkmark'/>
   if (miss)
   {
@@ -18,4 +18,4 @@ const Menu = ( { show, win, anchorPoint, clickConfirm, miss } ) => {
   return <></>;
 };
 
-export default Menu;
+export default ClickConfirm;

@@ -1,6 +1,6 @@
 import React from "react";
 import { MdClose } from "react-icons/md";
-import "./ResultsScreen.css"
+import "../Styles/ResultsScreen.css"
 
 const ResultsScreen = ({showResults, setShowResults, results}) => {
     let minutes = results.minutes;

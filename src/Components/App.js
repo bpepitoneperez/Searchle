@@ -1,12 +1,11 @@
-import './App.css';
+import '../Styles/App.css';
 import React, { useState } from 'react';
-import Menu from "./Menu";
+import ClickConfirm from "./ClickConfirm";
 import { useOutletContext } from "react-router-dom";
 
 const App = () => {
-  const [anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, misses, setMisses, endGame] = useOutletContext();
+  const [anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, miss, setMiss, misses, setMisses, endGame] = useOutletContext();
   const [clickSpot, setClickSpot] = useState({ x: 0, y: 0 });
-  const [miss, setMiss] = useState(false);
 
   const handleClick = e => {
     e.preventDefault();
@@ -53,7 +52,7 @@ const App = () => {
     <div className="App" >
       <header className="App-header">
         <img id='game-img' src="/testing.jpg" onClick={handleClick} className='img-fluid shadow-4' alt="Where's Waldo1" />
-        <Menu show={show} win={win} anchorPoint={anchorPoint} clickConfirm={clickConfirm} miss={miss}/>
+        <ClickConfirm show={show} win={win} anchorPoint={anchorPoint} clickConfirm={clickConfirm} miss={miss}/>
       </header>
     </div>
   );

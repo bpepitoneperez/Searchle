@@ -1,4 +1,4 @@
-import './index.css';
+import './Styles/index.css';
 import React from "react";
 import ReactDOM from "react-dom/client";
 import RouteSwitch from "./RouteSwitch";

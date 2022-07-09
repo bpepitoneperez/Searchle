@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import {  Outlet } from "react-router-dom";
 import Navbar from "./Navbar"
-import "./Layout.css"
-import useContextMenu from "./useContextMenu";
+import "../Styles/Layout.css"
 import Footer from "./Footer.js"
 import ResultsScreen from "./ResultsScreen.js"
 
 function Layout() {
-  const { anchorPoint, show, handleClickMenu, setShow } = useContextMenu();
+  const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
+  const [show, setShow] = useState(false);
   const [win, setWin] = useState(false);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] =  useState(0);
+  const [miss, setMiss] = useState(false);
   const [misses, setMisses] = useState(0);
   const [gameOver, setGameOver] = useState(false);
   const [showResults, setShowResults] = useState(false);
@@ -25,11 +26,19 @@ function Layout() {
   const [ currentChar, setCurrentChar ] = useState (
     {
       charName: "Sasuke Uchiha",
+      source: "Naruto",
       imgUrl: "/sasuke uchiha.png",
       xPos: 15,
       yPos: 23
     }
   )
+
+  const handleClickMenu = (event) => {
+    event.preventDefault();
+    if (!miss)
+      setAnchorPoint({ x: event.pageX, y: event.pageY });
+    setShow(true);
+}
 
   const clickScreen = e => {
     if (e.target.id !== 'game-img' && e.target.id !== 'checkmark' && e.target.className !== 'circle-div' && e.target.nodeName !== 'path')
@@ -81,9 +90,8 @@ function Layout() {
           <Navbar char={currentChar} minutes={minutes} seconds={seconds}/>
       </div>
       <div className='content'>
-          <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, misses, setMisses, endGame]} />
+          <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, miss, setMiss, misses, setMisses, endGame]} />
       </div>
-      <Footer/>
       <ResultsScreen showResults={showResults} setShowResults={setShowResults} results={results}/>
     </div>
   );

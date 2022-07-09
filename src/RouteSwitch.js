@@ -1,9 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from "./App";
-import NotFound from "./NotFound";
-import Layout from "./Layout";
-import Contact from "./Contact"
-import Leaderboard from "./Leaderboard"
+import App from "./Components/App";
+import NotFound from "./Components/NotFound";
+import Layout from "./Components/Layout";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -42,8 +40,6 @@ const RouteSwitch = () => {
       <Routes>
         <Route path="/" element={<Layout />} >
           <Route index element={<App />} />
-          <Route path="leaderboard" element={<Leaderboard />} />
-          <Route path="contact" element={<Contact />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
