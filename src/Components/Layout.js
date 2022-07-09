@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import {  Outlet } from "react-router-dom";
 import Navbar from "./Navbar"
 import "../Styles/Layout.css"
-import Footer from "./Footer.js"
-import ResultsScreen from "./ResultsScreen.js"
+import InfoScreen from './InfoScreen';
+import StatsScreen from './StatsScreen';
 
 function Layout() {
   const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
@@ -12,14 +12,14 @@ function Layout() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] =  useState(0);
   const [miss, setMiss] = useState(false);
-  const [misses, setMisses] = useState(0);
   const [gameOver, setGameOver] = useState(false);
-  const [showResults, setShowResults] = useState(false);
-  const [results, setResults] = useState(
+  const [showInfo, setShowInfo] = useState(true);
+  const [showStats, setShowStats] = useState(false);
+  const [stats, setStats] = useState(
     {
-      minutes: 0,
-      seconds: 0,
-      misses: 0,
+      wins: 2,
+      percent: 100,
+      streak: 2,
     }
   );
 
@@ -46,18 +46,21 @@ function Layout() {
       console.log(e)
       setShow(false);
     }
+
+    if(showStats)
+      setShowStats(false);
   }
 
   const endGame = () => {
-    setResults(
+    setStats(
       {
-        minutes: minutes,
-        seconds: seconds,
-        misses: misses,
+        wins: stats.wins + 1,
+        percent: stats.percent,
+        streak: stats.streak + 1,
       }
     );
     setGameOver(true);
-    setShowResults(true);
+    setShowStats(true);
   }
 
   useEffect(
@@ -87,12 +90,13 @@ function Layout() {
   return (
     <div className='Layout-header' onClick={clickScreen}>
       <div className="navbar">
-          <Navbar char={currentChar} minutes={minutes} seconds={seconds}/>
+          <Navbar showStats={showStats} setShowStats={setShowStats} showInfo={showInfo} setShowInfo={setShowInfo}/>
       </div>
       <div className='content'>
-          <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, miss, setMiss, misses, setMisses, endGame]} />
+          <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, miss, setMiss, endGame]} />
       </div>
-      <ResultsScreen showResults={showResults} setShowResults={setShowResults} results={results}/>
+      <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats} />
+      <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={currentChar} />
     </div>
   );
 }

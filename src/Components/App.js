@@ -4,7 +4,7 @@ import ClickConfirm from "./ClickConfirm";
 import { useOutletContext } from "react-router-dom";
 
 const App = () => {
-  const [anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, miss, setMiss, misses, setMisses, endGame] = useOutletContext();
+  const [anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, miss, setMiss, endGame] = useOutletContext();
   const [clickSpot, setClickSpot] = useState({ x: 0, y: 0 });
 
   const handleClick = e => {
@@ -39,7 +39,6 @@ const App = () => {
     }
     else
     {
-      setMisses(misses + 1)
       setMiss(true);
       setTimeout(() => {
         setMiss(false);

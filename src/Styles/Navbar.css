@@ -57,6 +57,17 @@
     cursor: pointer;
 }
 
+#nav-artist {
+    color: black;
+    text-decoration: none;
+    padding: 0;
+}
+
+#nav-artist:hover {
+    color: rgb(194,35,3);
+    cursor: pointer;
+}
+
 #nav-github {
     color: black;
     text-decoration: none;
