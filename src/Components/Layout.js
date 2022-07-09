@@ -15,11 +15,15 @@ function Layout() {
   const [gameOver, setGameOver] = useState(false);
   const [showInfo, setShowInfo] = useState(true);
   const [showStats, setShowStats] = useState(false);
+  const [firstVisit, setFirstVisit] = useState(true);
   const [stats, setStats] = useState(
     {
+      played: 2,
       wins: 2,
       percent: 100,
       streak: 2,
+      minutes: 0,
+      seconds: 0
     }
   );
 
@@ -54,9 +58,12 @@ function Layout() {
   const endGame = () => {
     setStats(
       {
+        played: stats.played + 1,
         wins: stats.wins + 1,
         percent: stats.percent,
         streak: stats.streak + 1,
+        minutes: minutes,
+        seconds: seconds
       }
     );
     setGameOver(true);
@@ -65,7 +72,7 @@ function Layout() {
 
   useEffect(
     () => {let interval;
-      if (!gameOver) {
+      if (!gameOver && !showInfo) {
         interval = setInterval(() => {
           if (seconds < 59) {
             setSeconds(seconds => seconds + 1);
@@ -84,19 +91,21 @@ function Layout() {
         clearInterval(interval);
       };
     },
-    [gameOver, seconds]
+    [gameOver, seconds, showInfo]
   );
 
   return (
-    <div className='Layout-header' onClick={clickScreen}>
+    <div className='Layout-header' onClick={clickScreen} >
       <div className="navbar">
-          <Navbar showStats={showStats} setShowStats={setShowStats} showInfo={showInfo} setShowInfo={setShowInfo}/>
+          <Navbar showStats={showStats} setShowStats={setShowStats} showInfo={showInfo}
+            setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} />
       </div>
       <div className='content'>
           <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, miss, setMiss, endGame]} />
       </div>
       <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats} />
-      <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={currentChar} />
+      <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={currentChar} firstVisit={firstVisit}
+        setFirstVisit={setFirstVisit} gameOver={gameOver} />
     </div>
   );
 }

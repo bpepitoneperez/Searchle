@@ -6,7 +6,7 @@ import { MdBrush } from "react-icons/md";
 import { MdHelp } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 
-const navbar = ({showStats, setShowStats, showInfo, setShowInfo}) => {
+const navbar = ({showStats, setShowStats, showInfo, setShowInfo, setFirstVisit}) => {
   // {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}
 
 
@@ -20,7 +20,10 @@ const navbar = ({showStats, setShowStats, showInfo, setShowInfo}) => {
 
   const clickNav = (e) => {
     if (showInfo)
+    {
       setShowInfo(false);
+      setFirstVisit(false);
+    }
 
     if (showStats)
       setShowStats(false);
