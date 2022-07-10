@@ -1,0 +1,19 @@
+.title {
+    font-size: 1.4em;
+    font-weight: 300;
+}
+
+.bar-group .name-label {
+    text-anchor: end;
+    font-weight: 300;
+    font-size: 1em;
+    fill: rgb(0, 0, 0);
+    color: black;
+}
+
+.bar-group .value-label {
+    text-anchor: end;
+    fill: #fff;
+    font-weight: 900;
+    font-size: 0.7em;
+}

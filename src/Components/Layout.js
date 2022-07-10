@@ -126,7 +126,8 @@ function Layout() {
       <div className='content'>
           <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentChar, hit, setHit, miss, setMiss, endGame, gameOver]} />
       </div>
-      <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats} />
+      <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats}
+        char={currentChar} />
       <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={currentChar} firstVisit={firstVisit}
         setFirstVisit={setFirstVisit} gameOver={gameOver} />
     </div>
