@@ -22,8 +22,11 @@ function Layout() {
       wins: 2,
       percent: 100,
       streak: 2,
+      bestStreak: 2,
       minutes: 0,
-      seconds: 0
+      seconds: 0,
+      bestMinutes: 0,
+      bestSeconds: 23
     }
   );
 
@@ -62,8 +65,11 @@ function Layout() {
         wins: stats.wins + 1,
         percent: stats.percent,
         streak: stats.streak + 1,
+        bestStreak: stats.bestStreak + 1,
         minutes: minutes,
-        seconds: seconds
+        seconds: seconds,
+        bestMinutes: stats.bestMinutes,
+        bestSeconds: stats.bestSeconds
       }
     );
     setGameOver(true);

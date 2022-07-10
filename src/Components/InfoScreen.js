@@ -1,6 +1,5 @@
 import React from "react";
 import { MdClose } from "react-icons/md";
-import Button from 'react-bootstrap/Button'
 import "../Styles/InfoScreen.css"
 
 const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gameOver}) => {
@@ -25,7 +24,6 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
                             <div id='info-top-middle' className="info-top-div">How to play</div>
                             <div id='info-top-right' className="info-top-div"><MdClose id='info-close' onClick={closeInfo}/></div>
                         </div>
-                        {/* <div id='info-close-div' className="info-item"></div> */}
                         <div id='info-game-info' className="info-item">
                             <p>Search for today's hidden character in the image</p>
                             <p>Your score is based on how long it takes you</p>
