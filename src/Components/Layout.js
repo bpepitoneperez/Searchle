@@ -4,11 +4,14 @@ import Navbar from "./Navbar"
 import "../Styles/Layout.css"
 import InfoScreen from './InfoScreen';
 import StatsScreen from './StatsScreen';
+import fx from 'fireworks'
 
 function Layout() {
+  const fireworks = require('fireworks')
+
   const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
   const [show, setShow] = useState(false);
-  const [win, setWin] = useState(false);
+  const [hit, setHit] = useState(false);
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] =  useState(0);
   const [miss, setMiss] = useState(false);
@@ -48,7 +51,8 @@ function Layout() {
 }
 
   const clickScreen = e => {
-    if (e.target.id !== 'game-img' && e.target.id !== 'checkmark' && e.target.className !== 'circle-div' && e.target.nodeName !== 'path')
+    if (e.target.id !== 'game-img' && e.target.id !== 'checkmark' && e.target.className !== 'circle-div'
+      && e.target.nodeName !== 'path' && e.target.id !== 'miss-icon' && e.target.id !== 'aiming')
     {
       console.log(e)
       setShow(false);
@@ -74,6 +78,19 @@ function Layout() {
     );
     setGameOver(true);
     setShowStats(true);
+
+    callFireworks();
+  }
+
+  const callFireworks = () => {
+    fx({
+      x: window.innerWidth / 2,
+      y: window.innerHeight / 2 - 50,
+      colors: ['#faa622', '#ffe52c', '#7fe6ef', '#c4d70c', '#c22303'],
+      count: 100,
+      canvasWidth: 600,
+      canvasHeight: 800,
+    })
   }
 
   useEffect(
@@ -107,7 +124,7 @@ function Layout() {
             setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} />
       </div>
       <div className='content'>
-          <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentChar, win, setWin, miss, setMiss, endGame]} />
+          <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentChar, hit, setHit, miss, setMiss, endGame, gameOver]} />
       </div>
       <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats} />
       <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={currentChar} firstVisit={firstVisit}
