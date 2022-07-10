@@ -8,13 +8,6 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, char}) => {
     const seconds = stats.seconds;
     const bestMinutes = stats.bestMinutes;
     const bestSeconds = stats.bestSeconds;
-    
-    const distribution1 = "<= 0:30"
-    const distribution2 = "<= 1:00"
-    const distribution3 = "<= 2:00"
-    const distribution4 = "<= 3:00"
-    const distribution5 = "<= 4:00"
-    const distribution6 = "<= 5:00"
 
     const closeStats = () => {
       setShowStats(false);
@@ -23,7 +16,7 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, char}) => {
     const statasticsTopBar = <div id='stats-close-div'><MdClose id='stats-close' onClick={closeStats}/></div>;
 
     const statisticsPanel = <div id='stats-panel' className="stats-page-panel">
-      <p className='stats-header'>STATISTICS</p>
+      <h1 className='stats-header'>STATISTICS</h1>
       <div id='stats-section'>
         <div className='stat-item'>
           <p id='played' className="stat">{stats.played}</p>
@@ -49,32 +42,9 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, char}) => {
     </div>
 
     const distributionPanel = <div className="stats-page-panel">
-      <p className='stats-header'>TIME DISTRIBUTION</p>
+      <h1 className='stats-header'>SCORE DISTRIBUTION</h1>
       <div id='distribution-section' >
-        <div className='distribution-item'>
-          <p className="distribution-descriptor">{distribution1}</p>
-          <p id='distribution-bar1' className='distribution-bar'>===</p>
-        </div>
-        <div className='distribution-item'>
-          <p className="distribution-descriptor">{distribution2}</p>
-          <p id='distribution-bar2' className='distribution-bar'>==============</p>
-        </div>
-        <div className='distribution-item'>
-          <p className="distribution-descriptor">{distribution3}</p>
-          <p id='distribution-bar3' className='distribution-bar'>=============</p>
-        </div>
-        <div className='distribution-item'>
-          <p className="distribution-descriptor">{distribution4}</p>
-          <p id='distribution-bar4' className='distribution-bar'>====================</p>
-        </div>
-        <div className='distribution-item'>
-          <p className="distribution-descriptor">{distribution5}</p>
-          <p id='distribution-bar5' className='distribution-bar'>==========</p>
-        </div>
-        <div className='distribution-item'>
-          <p className="distribution-descriptor">{distribution6}</p>
-          <p id='distribution-bar6' className='distribution-bar'>=====</p>
-        </div>
+        <BarChart />
       </div>
     </div>
 
@@ -84,16 +54,17 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, char}) => {
               <div className='stats-div'>
                 {statasticsTopBar}
                 {statisticsPanel}
-                <div className='stats-timer-div'>You found {char.charName} in {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</div>
-                {/* {distributionPanel} */}
-                <BarChart />
+                {/* <div className='stats-timer-div'>You found {char.charName} in {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</div> */}
+                {distributionPanel}
                 <div id='stats-bottom-div'>
                   <div id='stats-next-game'>
-                    <p>4:23:02 until next character</p>
+                    <p>Next Searchle</p>
+                    <p>4:23:02</p>
                   </div>
                   <div id='stats-share'>
                     <button>Share</button>
-                    </div>
+                    {/* <p>Searchle #1 🔍 🟩 ⬛ ⬛ ⬛ ⬛ ⬛</p> */}
+                  </div>
                 </div>
               </div>
             </div>
@@ -106,8 +77,7 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, char}) => {
               <div className='stats-div'>
                 {statasticsTopBar}
                 {statisticsPanel}
-                <BarChart />
-                {/* {distributionPanel} */}
+                {distributionPanel}
               </div>
             </div>
           );

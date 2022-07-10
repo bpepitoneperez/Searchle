@@ -1,19 +1,23 @@
 import React from "react";
 import "../Styles/BarGroup.css"
 
-function BarGroup(props) {
-    let barPadding = 2
-    let barColour = '#348AA7'
-    let widthScale = d => d * 10
+const BarGroup = (props) => {
+    let barColour = 'rgb(92, 92, 92)';
+
+    let widthScale = d => d/props.highest
   
-    let width = widthScale(props.d.value)
-    let yMid = props.barHeight * 0.5
-  
-    return <g className="bar-group">
-      <text className="name-label" x="-6" y={yMid} alignmentBaseline="middle" >{props.d.name}</text>
-      <rect y={barPadding * 0.5} width={width} height={props.barHeight - barPadding} fill={barColour} />
-      <text className="value-label" x={width- 8} y={yMid} alignmentBaseline="middle" >{props.d.value}</text>
-    </g>
+    let width = widthScale(props.d.value) * 100
+    
+    return (
+      <div className="bar-chart-bar-group">
+        <div className='bar-graph-label'>{props.d.name}</div>
+        <div className="bar-graph-bar-div">
+          <div  style={{backgroundColor: barColour, width: `${width}%`}} className='bar-graph-bar'>
+            <div className="value-label">{props.d.value}</div>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   export default BarGroup;

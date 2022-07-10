@@ -43,6 +43,16 @@ function Layout() {
     }
   )
 
+  // const [ currentChar, setCurrentChar ] = useState (
+  //   {
+  //     charName: "The Knight",
+  //     source: "Hollow Knight",
+  //     imgUrl: "/hollow knight.png",
+  //     xPos: 59,
+  //     yPos: 82
+  //   }
+  // )
+
   const handleClickMenu = (event) => {
     event.preventDefault();
     if (!miss)

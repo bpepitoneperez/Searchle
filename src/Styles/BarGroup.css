@@ -1,19 +1,31 @@
-.title {
-    font-size: 1.4em;
-    font-weight: 300;
+.bar-chart-bar-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 20%;
 }
 
-.bar-group .name-label {
-    text-anchor: end;
-    font-weight: 300;
-    font-size: 1em;
-    fill: rgb(0, 0, 0);
-    color: black;
+.bar-graph-bar-div {
+    width: 95%;
 }
 
-.bar-group .value-label {
-    text-anchor: end;
-    fill: #fff;
-    font-weight: 900;
-    font-size: 0.7em;
+.bar-graph-bar {
+    min-width: 3%;
+    margin: 3px;
+    height: 20px;
+}
+
+.bar-graph-label {
+    font-size: 13px;
+    width: 5%;
+    margin-right: 4px;
+}
+
+.value-label {
+    text-align: right;
+    color: white;
+    padding-right: 3px;
+    font-size: 12px;
+    font-weight: bold;
 }
