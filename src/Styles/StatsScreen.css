@@ -10,6 +10,13 @@
     font-size: 18px;
 }
 
+#copy-alert {
+    top: 7rem;
+    background-color: rgb(196,215,12);
+    border: none;
+    position: fixed;
+}
+
 .stats-div {
     background-color: rgb(127,230,239);
     color: black;
@@ -126,11 +133,40 @@
     justify-content: center;
     align-items: center;
     width: 50%;
+    height: 100%;
 }
 
-#stats-share {
+#stats-share-div {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 50%;
+    height: 100%;
+}
+
+#next-game-text {
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+
+#next-game-timer {
+    font-size: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+#stats-share-button {
+    border: none;
+    margin-bottom: 1rem;
+    height: 3rem;
+    width: 10rem;
+    background-color: rgb(255,229,44);
+    transition: 1s;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+#stats-share-button:hover {
+    background-color: rgb(250,166,34);
 }

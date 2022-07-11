@@ -1,9 +1,11 @@
 import React from "react";
 import { MdClose } from "react-icons/md";
 import BarChart from "./BarChart";
+import Alert from 'react-bootstrap/Alert';
+
 import "../Styles/StatsScreen.css"
 
-const StatsScreen = ({gameOver, showStats, setShowStats, stats, char}) => {
+const StatsScreen = ({gameOver, showStats, setShowStats, stats, char, resultsBar, handleShareClick, showAlert}) => {
     const minutes = stats.minutes;
     const seconds = stats.seconds;
     const bestMinutes = stats.bestMinutes;
@@ -44,31 +46,34 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, char}) => {
     const distributionPanel = <div className="stats-page-panel">
       <h1 className='stats-header'>SCORE DISTRIBUTION</h1>
       <div id='distribution-section' >
-        <BarChart />
+        <BarChart gameOver={gameOver} minutes={minutes} seconds={seconds} resultsBar={resultsBar}/>
       </div>
     </div>
 
     if (showStats && gameOver) {
         return (
-            <div className='stats-overlay'>
-              <div className='stats-div'>
-                {statasticsTopBar}
-                {statisticsPanel}
-                {/* <div className='stats-timer-div'>You found {char.charName} in {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</div> */}
-                {distributionPanel}
-                <div id='stats-bottom-div'>
-                  <div id='stats-next-game'>
-                    <p>Next Searchle</p>
-                    <p>4:23:02</p>
-                  </div>
-                  <div id='stats-share'>
-                    <button>Share</button>
-                    {/* <p>Searchle #1 🔍 🟩 ⬛ ⬛ ⬛ ⬛ ⬛</p> */}
-                  </div>
+          <div className='stats-overlay'>
+            <Alert id='copy-alert' variant="success" show={showAlert}>
+              Results copied to clickboard
+            </Alert>
+            <div className='stats-div'>
+              {statasticsTopBar}
+              {statisticsPanel}
+              {/* <div className='stats-timer-div'>You found {char.charName} in {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</div> */}
+              {distributionPanel}
+              <div id='stats-bottom-div'>
+                <div id='stats-next-game'>
+                  <h1 id='next-game-text'>Next Searchle</h1>
+                  <h1 id='next-game-timer'>14:23:02</h1>
+                </div>
+                <div id='stats-share-div'>
+                  <button id='stats-share-button' onClick={handleShareClick}>Share</button>
+                  {/* <p>Searchle #1 🔍 🟩 ⬛ ⬛ ⬛ ⬛ ⬛</p> */}
                 </div>
               </div>
             </div>
-          );
+          </div>
+        );
       }
 
     if (showStats) {

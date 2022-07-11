@@ -4,10 +4,10 @@ import Navbar from "./Navbar"
 import "../Styles/Layout.css"
 import InfoScreen from './InfoScreen';
 import StatsScreen from './StatsScreen';
-import fx from 'fireworks'
+import fx from 'fireworks';
+import { getResultsText } from '../Utils'
 
 function Layout() {
-  const fireworks = require('fireworks')
 
   const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
   const [show, setShow] = useState(false);
@@ -15,9 +15,12 @@ function Layout() {
   const [minutes, setMinutes] = useState(0);
   const [seconds, setSeconds] =  useState(0);
   const [miss, setMiss] = useState(false);
+  const [resultsBar, setResultsBar] = useState('0')
+  const [shareText, setShareText] = useState('Searchle #1')
   const [gameOver, setGameOver] = useState(false);
   const [showInfo, setShowInfo] = useState(true);
   const [showStats, setShowStats] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
   const [firstVisit, setFirstVisit] = useState(true);
   const [stats, setStats] = useState(
     {
@@ -33,15 +36,15 @@ function Layout() {
     }
   );
 
-  const [ currentChar, setCurrentChar ] = useState (
-    {
-      charName: "Sasuke Uchiha",
-      source: "Naruto",
-      imgUrl: "/sasuke uchiha.png",
-      xPos: 15,
-      yPos: 23
-    }
-  )
+  // const [ currentChar, setCurrentChar ] = useState (
+  //   {
+  //     charName: "Sasuke Uchiha",
+  //     source: "Naruto",
+  //     imgUrl: "/sasuke uchiha.png",
+  //     xPos: 15,
+  //     yPos: 23
+  //   }
+  // )
 
   // const [ currentChar, setCurrentChar ] = useState (
   //   {
@@ -53,26 +56,46 @@ function Layout() {
   //   }
   // )
 
+  const [ currentChar, setCurrentChar ] = useState (
+    {
+      charName: "Aang",
+      source: "Avatar: The Last Airbender",
+      imgUrl: "/aang.png",
+      xPos: 7,
+      yPos: 45
+    }
+  )
+
   const handleClickMenu = (event) => {
     event.preventDefault();
     if (!miss)
       setAnchorPoint({ x: event.pageX, y: event.pageY });
     setShow(true);
-}
+  }
+
+  const handleShareClick = (e) => {
+    navigator.clipboard.writeText(shareText)
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000);
+  };
 
   const clickScreen = e => {
     if (e.target.id !== 'game-img' && e.target.id !== 'checkmark' && e.target.className !== 'circle-div'
       && e.target.nodeName !== 'path' && e.target.id !== 'miss-icon' && e.target.id !== 'aiming')
     {
-      console.log(e)
+      console.log(e);
       setShow(false);
     }
 
-    if(showStats)
+    if(showStats && e.target.id !== 'stats-share-button')
       setShowStats(false);
-  }
+  };
 
   const endGame = () => {
+    setGameOver(true);
+
     setStats(
       {
         played: stats.played + 1,
@@ -86,11 +109,17 @@ function Layout() {
         bestSeconds: stats.bestSeconds
       }
     );
-    setGameOver(true);
+    
+    let resultsText = getResultsText(minutes, seconds, shareText)
+
+    setShareText(resultsText[0])
+
+    setResultsBar(resultsText[1])
+    
     setShowStats(true);
 
     callFireworks();
-  }
+  };
 
   const callFireworks = () => {
     fx({
@@ -100,8 +129,8 @@ function Layout() {
       count: 100,
       canvasWidth: 600,
       canvasHeight: 800,
-    })
-  }
+    });
+  };
 
   useEffect(
     () => {let interval;
@@ -137,7 +166,7 @@ function Layout() {
           <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentChar, hit, setHit, miss, setMiss, endGame, gameOver]} />
       </div>
       <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats}
-        char={currentChar} />
+        char={currentChar} handleShareClick={handleShareClick} resultsBar={resultsBar} showAlert={showAlert}/>
       <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={currentChar} firstVisit={firstVisit}
         setFirstVisit={setFirstVisit} gameOver={gameOver} />
     </div>

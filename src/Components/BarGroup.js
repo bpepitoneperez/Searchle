@@ -1,19 +1,23 @@
 import React from "react";
 import "../Styles/BarGroup.css"
 
-const BarGroup = (props) => {
-    let barColour = 'rgb(92, 92, 92)';
+const BarGroup = ({data, highest, resultsBar}) => {
+    let barColour = 'rgb(60,60,60)';
 
-    let widthScale = d => d/props.highest
+    if (data.name === resultsBar)
+      barColour = 'rgb(250,166,34)';
+      
+
+    let widthScale = d => d/highest
   
-    let width = widthScale(props.d.value) * 100
+    let width = widthScale(data.value) * 100
     
     return (
       <div className="bar-chart-bar-group">
-        <div className='bar-graph-label'>{props.d.name}</div>
+        <div className='bar-graph-label'>{data.name}</div>
         <div className="bar-graph-bar-div">
           <div  style={{backgroundColor: barColour, width: `${width}%`}} className='bar-graph-bar'>
-            <div className="value-label">{props.d.value}</div>
+            <div className="value-label">{data.value}</div>
           </div>
         </div>
       </div>
