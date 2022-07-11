@@ -36,15 +36,15 @@ function Layout() {
     }
   );
 
-  // const [ currentChar, setCurrentChar ] = useState (
-  //   {
-  //     charName: "Sasuke Uchiha",
-  //     source: "Naruto",
-  //     imgUrl: "/sasuke uchiha.png",
-  //     xPos: 15,
-  //     yPos: 23
-  //   }
-  // )
+  const [ currentChar, setCurrentChar ] = useState (
+    {
+      charName: "Sasuke Uchiha",
+      source: "Naruto",
+      imgUrl: "/sasuke uchiha.png",
+      xPos: 15,
+      yPos: 23
+    }
+  )
 
   // const [ currentChar, setCurrentChar ] = useState (
   //   {
@@ -56,15 +56,15 @@ function Layout() {
   //   }
   // )
 
-  const [ currentChar, setCurrentChar ] = useState (
-    {
-      charName: "Aang",
-      source: "Avatar: The Last Airbender",
-      imgUrl: "/aang.png",
-      xPos: 7,
-      yPos: 45
-    }
-  )
+  // const [ currentChar, setCurrentChar ] = useState (
+  //   {
+  //     charName: "Aang",
+  //     source: "Avatar: The Last Airbender",
+  //     imgUrl: "/aang.png",
+  //     xPos: 7,
+  //     yPos: 45
+  //   }
+  // )
 
   const handleClickMenu = (event) => {
     event.preventDefault();
