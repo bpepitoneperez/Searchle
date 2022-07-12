@@ -40,7 +40,7 @@ function Layout() {
     {
       charName: "Sasuke Uchiha",
       source: "Naruto",
-      imgUrl: "/sasuke uchiha.png",
+      imgUrl: "/chars/sasuke uchiha.png",
       xPos: 15,
       yPos: 23
     }
