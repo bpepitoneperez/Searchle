@@ -7,10 +7,10 @@ const RouteSwitch = () => {
   return (
     <HashRouter >
       <Routes>
-        <Route path="/" element={<Layout />} >
+        <Route path="/Searchle/" element={<Layout />} >
           <Route index element={<App />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
-        <Route path="*" element={<NotFound />} />
       </Routes>
     </HashRouter>
   );
