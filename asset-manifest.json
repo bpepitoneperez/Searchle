@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/BryanSkyyy/Searchle/static/css/main.453b97ee.css",
+    "main.js": "/BryanSkyyy/Searchle/static/js/main.c31feea9.js",
+    "index.html": "/BryanSkyyy/Searchle/index.html",
+    "main.453b97ee.css.map": "/BryanSkyyy/Searchle/static/css/main.453b97ee.css.map",
+    "main.c31feea9.js.map": "/BryanSkyyy/Searchle/static/js/main.c31feea9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.453b97ee.css",
+    "static/js/main.c31feea9.js"
+  ]
+}
