@@ -4,7 +4,7 @@ import Navbar from "./Navbar"
 import "../Styles/Layout.css"
 import InfoScreen from './InfoScreen';
 import StatsScreen from './StatsScreen';
-import fx from 'fireworks';
+import FireworksComponent from './FireworksComponent';
 import { getResultsText } from '../Utils'
 import axios from "../Utils/axios";
 
@@ -20,6 +20,7 @@ function Layout() {
   const [gameOver, setGameOver] = useState(false);
   const [showInfo, setShowInfo] = useState(true);
   const [showStats, setShowStats] = useState(false);
+  const [showFireworks, setShowFireworks] = useState(false)
   const [showAlert, setShowAlert] = useState(false);
   const [firstVisit, setFirstVisit] = useState(true);
   const [image, setImage] = useState({});
@@ -145,18 +146,11 @@ function Layout() {
     
     setShowStats(true);
 
-    callFireworks();
-  };
+    setShowFireworks(true);
 
-  const callFireworks = () => {
-    fx({
-      x: window.innerWidth / 2,
-      y: window.innerHeight / 2 - 50,
-      colors: ['#faa622', '#ffe52c', '#7fe6ef', '#c4d70c', '#c22303'],
-      count: 100,
-      canvasWidth: 600,
-      canvasHeight: 800,
-    });
+    setTimeout(() => {
+      setShowFireworks(false);
+    }, 1000);
   };
 
   useEffect(
@@ -196,6 +190,7 @@ function Layout() {
         char={character} handleShareClick={handleShareClick} resultsBar={resultsBar} showAlert={showAlert}/>
       <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={character} firstVisit={firstVisit}
         setFirstVisit={setFirstVisit} gameOver={gameOver} image={image}/>
+      <FireworksComponent showFireworks={showFireworks} />
     </div>
   );
 }
