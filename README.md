@@ -7,7 +7,12 @@ The frontend pulls the image for the day (currently updating every 10 minutes fo
 
 ##TODO
 Fix fireworks
+
 Check image zoom
+
 Host frontend and backend
+
 Cookies Integration with User Stats
+
 Add lots more images and characters
+
