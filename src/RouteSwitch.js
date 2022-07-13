@@ -5,9 +5,9 @@ import Layout from "./Components/Layout";
 
 const RouteSwitch = () => {
   return (
-    <HashRouter basename={'https://bryanskyyy.github.io/Searchle'}>
+    <HashRouter >
       <Routes>
-        <Route path="/" element={<Layout />} >
+        <Route path="" element={<Layout />} >
           <Route index element={<App />} />
           <Route path="*" element={<NotFound />} />
         </Route>
