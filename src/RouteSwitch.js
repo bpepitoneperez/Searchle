@@ -5,7 +5,7 @@ import Layout from "./Components/Layout";
 
 const RouteSwitch = () => {
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={'https://bryanskyyy.github.io/Searchle'}>
       <Routes>
         <Route path="/" element={<Layout />} >
           <Route index element={<App />} />
