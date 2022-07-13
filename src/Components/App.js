@@ -4,7 +4,7 @@ import ClickConfirm from "./ClickConfirm";
 import { useOutletContext } from "react-router-dom";
 
 const App = () => {
-  const [anchorPoint, show, handleClickMenu, setShow, currentChar, hit, setHit, miss, setMiss, endGame, gameOver] = useOutletContext();
+  const [anchorPoint, show, handleClickMenu, setShow, character, hit, setHit, miss, setMiss, endGame, gameOver, image] = useOutletContext();
   const [clickSpot, setClickSpot] = useState({ x: 0, y: 0 });
 
   const handleClick = e => {
@@ -31,7 +31,7 @@ const App = () => {
     let y1 = clickSpot.y - 5;
     let y2 = clickSpot.y + 5;
     
-    if (x1 <= currentChar.xPos && x2 >= currentChar.xPos && y1 <= currentChar.yPos && y2 >= currentChar.yPos)
+    if (x1 <= character.xPos && x2 >= character.xPos && y1 <= character.yPos && y2 >= character.yPos)
     {
       setHit(true);
       setTimeout(() => {
@@ -52,7 +52,8 @@ const App = () => {
   return (
     <div className="App" >
       <header className="App-header">
-        <img id='game-img' src="/imgs/testing.jpg" onClick={handleClick} className='img-fluid shadow-4' alt="Where's Waldo1" />
+        <img id='game-img' src={image.imgUrl} onClick={handleClick} className='img-fluid shadow-4' alt={image.title} />
+        {/* <img id='game-img' src="/imgs/pierre-roussel-xbox360-web.jpg" onClick={handleClick} className='img-fluid shadow-4' alt={image.title} /> */}
         <ClickConfirm show={show} hit={hit} anchorPoint={anchorPoint} clickConfirm={clickConfirm} miss={miss} gameOver={gameOver}/>
       </header>
     </div>

@@ -1,8 +1,9 @@
-export const getResultsText = (minutes, seconds, shareText) => {
+export const getResultsText = (minutes, seconds, shareText, times) => {
     let minutesText = minutes < 10 ? `0${minutes}` : minutes;
     let secondsText = seconds < 10 ? `0${seconds}` : seconds;
     let tempText = shareText;
     let tempBar = '0'
+    let newTimes = times;
 
     tempText += ` - ${minutesText}:${secondsText}\n`;
     
@@ -41,11 +42,13 @@ export const getResultsText = (minutes, seconds, shareText) => {
       {
         tempText += thirtyOrLess.text;
         tempBar = thirtyOrLess.bar;
+        newTimes.thirtyOrLess += 1;
       }
       else
       {
         tempText += oneOrLess.text;
         tempBar += oneOrLess.bar;
+        newTimes.oneOrLess += 1;
       }
     }
     else if (minutes === 1)
@@ -54,16 +57,19 @@ export const getResultsText = (minutes, seconds, shareText) => {
       {
         tempText += oneOrLess.text;
         tempBar += oneOrLess.bar;
+        newTimes.oneOrLess += 1;
       }
       else if (seconds <= 30)
       {
         tempText += oneThirtyOrLess.text;
         tempBar = oneThirtyOrLess.bar;
+        newTimes.oneThirtyOrLess += 1;
       }
       else
       {
         tempText += twoOrLess.text;
         tempBar += twoOrLess.bar;
+        newTimes.twoOrLess += 1;
       }
     }
     else if (minutes === 2)
@@ -72,16 +78,19 @@ export const getResultsText = (minutes, seconds, shareText) => {
       {
         tempText += twoOrLess.text;
         tempBar += twoOrLess.bar;
+        newTimes.twoOrLess += 1;
       }
       else if (seconds <= 30)
       {
         tempText += twoThirtyOrLess.text;
         tempBar = twoThirtyOrLess.bar;
+        newTimes.twoThirtyOrLess += 1;
       }
       else
       {
         tempText += threeOrLess.text;
         tempBar += threeOrLess.bar;
+        newTimes.threeOrLess += 1;
       }
     }
     else if (minutes === 3)
@@ -90,6 +99,7 @@ export const getResultsText = (minutes, seconds, shareText) => {
       {
         tempText += threeOrLess.text;
         tempBar += threeOrLess.bar;
+        newTimes.threeOrLess += 1;
       }
       else
       {
@@ -103,5 +113,5 @@ export const getResultsText = (minutes, seconds, shareText) => {
       tempBar += overThree.bar;
     }
 
-    return [tempText, tempBar];
+    return [tempText, tempBar, newTimes];
   }

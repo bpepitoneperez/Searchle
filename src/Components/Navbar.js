@@ -6,7 +6,7 @@ import { MdBrush } from "react-icons/md";
 import { MdHelp } from "react-icons/md";
 import { FaGithub } from "react-icons/fa";
 
-const navbar = ({showStats, setShowStats, showInfo, setShowInfo, setFirstVisit}) => {
+const navbar = ({showStats, setShowStats, showInfo, setShowInfo, setFirstVisit, image}) => {
   // {minutes}:{seconds < 10 ?  `0${seconds}` : seconds}
 
 
@@ -37,11 +37,11 @@ const navbar = ({showStats, setShowStats, showInfo, setShowInfo, setFirstVisit})
           <div className='nav-link-div' onClick={clickInfo}><MdHelp /></div>
         </div>
         <div id='nav-div-middle' className='nav-content'>
-          <div id='nav-brand'>Searchle</div>
+          <div id='nav-brand'>Searchle(beta)</div>
         </div>
         <div id='nav-div-right' className='nav-content'>
           <div className='nav-link-div'>
-            <a id='nav-artist' className="nav-link" href="https://github.com/BryanSkyyy" target="_blank" rel="noreferrer">
+            <a id='nav-artist' className="nav-link" href={image.authorUrl} target="_blank" rel="noreferrer">
                 <MdBrush />
             </a>
           </div>

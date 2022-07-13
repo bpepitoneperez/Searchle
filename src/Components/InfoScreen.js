@@ -2,7 +2,7 @@ import React from "react";
 import { MdClose } from "react-icons/md";
 import "../Styles/InfoScreen.css"
 
-const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gameOver}) => {
+const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gameOver, image}) => {
 
     const closeInfo = () => {
         setShowInfo(false);
@@ -31,9 +31,9 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
                         </div>
                         <div id='info-char-details' className="info-item">
                             <div id='info-char-text'>
-                                <p>Today's character is <strong>{char.charName}</strong> from <strong>{char.source}</strong></p>
+                                <p>Today's character is <strong>{char.name}</strong> from <strong>{char.source}</strong></p>
                             </div>
-                            <img id='char-img' src={char.imgUrl} onClick={closeInfo} alt="Where's Waldo1" />
+                            <img id='char-img' src={char.charUrl} onClick={closeInfo} alt={char.name} />
                         </div>
                         <button id='info-go' className="info-item" onClick={closeInfo}>Start</button>
                     </div>
@@ -57,11 +57,11 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
                         </div>
                         <div id='info-char-details' className="info-item">
                             <div id='info-char-text'>
-                                <p>Today's character {contextText} <strong>{char.charName}</strong> from <strong>{char.source}</strong></p>
+                                <p>Today's character {contextText} <strong>{char.name}</strong> from <strong>{char.source}</strong></p>
                             </div>
-                            <img id='char-img' src={char.imgUrl} onClick={closeInfo} alt="Where's Waldo1" />
+                            <img id='char-img' src={char.charUrl} onClick={closeInfo} alt="Where's Waldo1" />
                         </div>
-                        <a id='info-artist' className="info-item" href="https://github.com/BryanSkyyy" target="_blank" rel="noreferrer">
+                        <a id='info-artist' className="info-item" href={image.authorUrl} target="_blank" rel="noreferrer">
                             Support today's artist
                         </a>
                         <div id='info-blurb' className="info-item">New Searchle everyday!</div>

@@ -6,9 +6,9 @@ import InfoScreen from './InfoScreen';
 import StatsScreen from './StatsScreen';
 import fx from 'fireworks';
 import { getResultsText } from '../Utils'
+import axios from "../Utils/axios";
 
 function Layout() {
-
   const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
   const [show, setShow] = useState(false);
   const [hit, setHit] = useState(false);
@@ -22,47 +22,69 @@ function Layout() {
   const [showStats, setShowStats] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [firstVisit, setFirstVisit] = useState(true);
+  const [image, setImage] = useState({});
+  const [character, setCharacter] = useState({});
   const [stats, setStats] = useState(
     {
-      played: 2,
-      wins: 2,
-      percent: 100,
-      streak: 2,
-      bestStreak: 2,
+      played: 0,
+      wins: 0,
+      percent: 0,
+      streak: 0,
+      bestStreak: 0,
       minutes: 0,
       seconds: 0,
       bestMinutes: 0,
-      bestSeconds: 23
+      bestSeconds: 0,
+      times: {
+        thirtyOrLess: 0,
+        oneOrLess: 0,
+        oneThirtyOrLess: 0,
+        twoOrLess: 0,
+        twoThirtyOrLess: 0,
+        threeOrLess: 0
+      }
     }
   );
 
-  const [ currentChar, setCurrentChar ] = useState (
-    {
-      charName: "Sasuke Uchiha",
-      source: "Naruto",
-      imgUrl: "/chars/sasuke uchiha.png",
-      xPos: 15,
-      yPos: 23
-    }
-  )
+  useEffect(() => {
+    // GET request using axios inside useEffect React hook
+    axios.get('/images/latest')
+    .then(function (response) {
+      // handle success
+      setImage(response.data);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log('Get image latest',error);
+    })
+    .then(function () {
+      // always executed
+    });
+
+    axios.get('/characters/latest')
+    .then(function (response) {
+      // handle success
+      setCharacter(response.data);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log('Get character latest',error);
+    })
+    .then(function () {
+      // always executed
+    });
+  // empty dependency array means this effect will only run once (like componentDidMount in classes)
+  }, [])
+
+  
 
   // const [ currentChar, setCurrentChar ] = useState (
   //   {
-  //     charName: "The Knight",
-  //     source: "Hollow Knight",
-  //     imgUrl: "/hollow knight.png",
-  //     xPos: 59,
-  //     yPos: 82
-  //   }
-  // )
-
-  // const [ currentChar, setCurrentChar ] = useState (
-  //   {
-  //     charName: "Aang",
-  //     source: "Avatar: The Last Airbender",
-  //     imgUrl: "/aang.png",
-  //     xPos: 7,
-  //     yPos: 45
+  //     charName: "Sasuke Uchiha",
+  //     source: "Naruto",
+  //     imgUrl: "/chars/sasuke uchiha.png",
+  //     xPos: 15,
+  //     yPos: 23
   //   }
   // )
 
@@ -96,25 +118,30 @@ function Layout() {
   const endGame = () => {
     setGameOver(true);
 
+    
+    
+    let results = getResultsText(minutes, seconds, shareText, stats.times)
+
+    setShareText(results[0])
+
+    setResultsBar(results[1])
+
+    let tempTimes = results[2];
+
     setStats(
       {
         played: stats.played + 1,
         wins: stats.wins + 1,
-        percent: stats.percent,
+        percent: 100,
         streak: stats.streak + 1,
         bestStreak: stats.bestStreak + 1,
         minutes: minutes,
         seconds: seconds,
-        bestMinutes: stats.bestMinutes,
-        bestSeconds: stats.bestSeconds
+        bestMinutes: minutes,
+        bestSeconds: seconds,
+        times: tempTimes
       }
     );
-    
-    let resultsText = getResultsText(minutes, seconds, shareText)
-
-    setShareText(resultsText[0])
-
-    setResultsBar(resultsText[1])
     
     setShowStats(true);
 
@@ -160,15 +187,15 @@ function Layout() {
     <div className='Layout-header' onClick={clickScreen} >
       <div className="navbar">
           <Navbar showStats={showStats} setShowStats={setShowStats} showInfo={showInfo}
-            setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} />
+            setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} image={image} />
       </div>
       <div className='content'>
-          <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentChar, hit, setHit, miss, setMiss, endGame, gameOver]} />
+          <Outlet context={[anchorPoint, show, handleClickMenu, setShow, character, hit, setHit, miss, setMiss, endGame, gameOver, image]} />
       </div>
       <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats}
-        char={currentChar} handleShareClick={handleShareClick} resultsBar={resultsBar} showAlert={showAlert}/>
-      <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={currentChar} firstVisit={firstVisit}
-        setFirstVisit={setFirstVisit} gameOver={gameOver} />
+        char={character} handleShareClick={handleShareClick} resultsBar={resultsBar} showAlert={showAlert}/>
+      <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={character} firstVisit={firstVisit}
+        setFirstVisit={setFirstVisit} gameOver={gameOver} image={image}/>
     </div>
   );
 }

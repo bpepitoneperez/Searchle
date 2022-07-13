@@ -18,7 +18,7 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, char, resultsBar
     const statasticsTopBar = <div id='stats-close-div'><MdClose id='stats-close' onClick={closeStats}/></div>;
 
     const statisticsPanel = <div id='stats-panel' className="stats-page-panel">
-      <h1 className='stats-header'>STATISTICS</h1>
+      <h1 className='stats-header'>STATISTICS (in progress)</h1>
       <div id='stats-section'>
         <div className='stat-item'>
           <p id='played' className="stat">{stats.played}</p>
@@ -46,7 +46,7 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, char, resultsBar
     const distributionPanel = <div className="stats-page-panel">
       <h1 className='stats-header'>SCORE DISTRIBUTION</h1>
       <div id='distribution-section' >
-        <BarChart gameOver={gameOver} minutes={minutes} seconds={seconds} resultsBar={resultsBar}/>
+        <BarChart stats={stats} gameOver={gameOver} minutes={minutes} seconds={seconds} resultsBar={resultsBar}/>
       </div>
     </div>
 

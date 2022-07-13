@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import BarGroup from "./BarGroup";
 import "../Styles/BarChart.css"
 
-const BarChart = ({gameOver, minutes, seconds, resultsBar}) => {
+const BarChart = ({stats, gameOver, minutes, seconds, resultsBar}) => {
     const [data, setData] = useState([
-      { name: '0:30', value: 1 },
-      { name: '1:00', value: 12 },
-      { name: '1:30', value: 29 },
-      { name: '2:00', value: 50 },
-      { name: '2:30', value: 51 },
-      { name: '3:00', value: 42 }
+      { name: '0:30', value: stats.times.thirtyOrLess },
+      { name: '1:00', value: stats.times.oneOrLess },
+      { name: '1:30', value: stats.times.oneThirtyOrLess },
+      { name: '2:00', value: stats.times.twoOrLess },
+      { name: '2:30', value: stats.times.twoThirtyOrLess },
+      { name: '3:00', value: stats.times.threeOrLess }
     ])
     
 
