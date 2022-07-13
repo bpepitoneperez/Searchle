@@ -1,5 +1,5 @@
 # Searchle React Frontend
-Basically a Worlde x Where's Waldo fusion
+Basically a Wordle x Where's Waldo fusion
 
 This frontend is built with React and React-Router, with some bootstrap and other css for styling.
 
