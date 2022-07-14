@@ -1,5 +1,7 @@
 # Searchle React Frontend
 
+Play here: https://bryanskyyy.github.io/Searchle/
+
 Basically a Wordle x Where's Waldo fusion
 
 ##About
