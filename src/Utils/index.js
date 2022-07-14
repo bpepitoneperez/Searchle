@@ -112,6 +112,8 @@ export const getResultsText = (minutes, seconds, shareText, times) => {
       tempText += overThree.text;
       tempBar += overThree.bar;
     }
+    
+    tempText += "\nhttps://bryanskyyy.github.io/Searchle/"
 
     return [tempText, tempBar, newTimes];
   }

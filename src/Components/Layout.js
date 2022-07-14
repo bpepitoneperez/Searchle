@@ -16,7 +16,7 @@ function Layout() {
   const [seconds, setSeconds] =  useState(0);
   const [miss, setMiss] = useState(false);
   const [resultsBar, setResultsBar] = useState('0')
-  const [shareText, setShareText] = useState('Searchle #1')
+  const [shareText, setShareText] = useState('Searchle Beta')
   const [gameOver, setGameOver] = useState(false);
   const [showInfo, setShowInfo] = useState(true);
   const [showStats, setShowStats] = useState(false);
