@@ -9,6 +9,8 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
         setFirstVisit(false);
     }
 
+    let charUrl = "Searchle" + char.charUrl
+
     let contextText = 'is'
     if (gameOver)
         contextText = 'was'
@@ -33,7 +35,7 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
                             <div id='info-char-text'>
                                 <p>Today's character is <strong>{char.name}</strong> from <strong>{char.source}</strong></p>
                             </div>
-                            <img id='char-img' src={char.charUrl} onClick={closeInfo} alt={char.name} />
+                            <img id='char-img' src={charUrl} onClick={closeInfo} alt={char.name} />
                         </div>
                         <button id='info-go' className="info-item" onClick={closeInfo}>Start</button>
                     </div>
@@ -59,7 +61,7 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
                             <div id='info-char-text'>
                                 <p>Today's character {contextText} <strong>{char.name}</strong> from <strong>{char.source}</strong></p>
                             </div>
-                            <img id='char-img' src={char.charUrl} onClick={closeInfo} alt={char.name} />
+                            <img id='char-img' src={charUrl} onClick={closeInfo} alt={char.name} />
                         </div>
                         <a id='info-artist' className="info-item" href={image.authorUrl} target="_blank" rel="noreferrer">
                             Support today's artist
