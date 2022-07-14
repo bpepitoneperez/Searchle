@@ -46,7 +46,7 @@ const navbar = ({showStats, setShowStats, showInfo, setShowInfo, setFirstVisit, 
             </a>
           </div>
           <div className='nav-link-div'>
-            <a id='nav-github' className="nav-link" href="https://github.com/BryanSkyyy" target="_blank" rel="noreferrer">
+            <a id='nav-github' className="nav-link" href="https://github.com/BryanSkyyy/Searchle" target="_blank" rel="noreferrer">
                 <FaGithub />
             </a>
           </div>
