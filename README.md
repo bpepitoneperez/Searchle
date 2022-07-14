@@ -18,8 +18,6 @@ The frontend pulls the image for the day (currently updating every 30 minutes fo
 
 ### PROJECT TODO
 
-Figure out dev environment stuff now that everything is published
-
 Adjust font size on zoom
 
 Fix stats screen being ugly

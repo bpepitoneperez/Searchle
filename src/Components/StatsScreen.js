@@ -64,7 +64,7 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, char, resultsBar
               <div id='stats-bottom-div'>
                 <div id='stats-next-game'>
                   <h1 id='next-game-text'>Next Searchle</h1>
-                  <h1 id='next-game-timer'>30 minute intervals</h1>
+                  <h1 id='next-game-timer'>Every hour</h1>
                 </div>
                 <div id='stats-share-div'>
                   <button id='stats-share-button' onClick={handleShareClick}>Share</button>
