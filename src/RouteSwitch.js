@@ -4,10 +4,11 @@ import NotFound from "./Components/NotFound";
 import Layout from "./Components/Layout";
 
 const RouteSwitch = () => {
+  console.log(process.env.PUBLIC_URL)
   return (
-    <BrowserRouter >
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
-        <Route path="/Searchle" element={<Layout />} >
+        <Route path="/" element={<Layout />} >
           <Route index element={<App />} />
           <Route path="*" element={<NotFound />} />
         </Route>
