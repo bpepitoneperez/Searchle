@@ -52,7 +52,7 @@ const App = () => {
   return (
     <div className="App" >
       <header className="App-header">
-        <img id='game-img' src={image.imgUrl} onClick={handleClick} className='img-fluid shadow-4' alt={image.title} />
+        <img id='game-img' src={`Searchle/${image.imgUrl}`} onClick={handleClick} className='img-fluid shadow-4' alt={image.title} />
         {/* <img id='game-img' src="/imgs/pierre-roussel-xbox360-web.jpg" onClick={handleClick} className='img-fluid shadow-4' alt={image.title} /> */}
         <ClickConfirm show={show} hit={hit} anchorPoint={anchorPoint} clickConfirm={clickConfirm} miss={miss} gameOver={gameOver}/>
       </header>
