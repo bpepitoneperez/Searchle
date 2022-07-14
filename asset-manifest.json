@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Searchle/static/css/main.d63609a0.css",
-    "main.js": "/Searchle/static/js/main.993ad8e0.js",
+    "main.css": "/Searchle/static/css/main.ab27a884.css",
+    "main.js": "/Searchle/static/js/main.86d7623d.js",
     "index.html": "/Searchle/index.html",
-    "main.d63609a0.css.map": "/Searchle/static/css/main.d63609a0.css.map",
-    "main.993ad8e0.js.map": "/Searchle/static/js/main.993ad8e0.js.map"
+    "main.ab27a884.css.map": "/Searchle/static/css/main.ab27a884.css.map",
+    "main.86d7623d.js.map": "/Searchle/static/js/main.86d7623d.js.map"
   },
   "entrypoints": [
-    "static/css/main.d63609a0.css",
-    "static/js/main.993ad8e0.js"
+    "static/css/main.ab27a884.css",
+    "static/js/main.86d7623d.js"
   ]
 }
