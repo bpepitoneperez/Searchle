@@ -20,8 +20,6 @@ The frontend pulls the image for the day (currently updating every 30 minutes fo
 
 Adjust font size on zoom
 
-Fix stats screen being ugly
-
 Move images out of public folder
 
 Cookies Integration with User Stats
