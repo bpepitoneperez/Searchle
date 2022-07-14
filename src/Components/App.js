@@ -7,7 +7,7 @@ const App = () => {
   const [anchorPoint, show, handleClickMenu, setShow, character, hit, setHit, miss, setMiss, endGame, gameOver, image] = useOutletContext();
   const [clickSpot, setClickSpot] = useState({ x: 0, y: 0 });
 
-  let imgUrl = "Searchle" + image.imgUrl
+  let imgUrl = process.env.PUBLIC_URL + image.imgUrl
 
   const handleClick = e => {
     e.preventDefault();

@@ -9,7 +9,7 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
         setFirstVisit(false);
     }
 
-    let charUrl = "Searchle" + char.charUrl
+    let charUrl = process.env.PUBLIC_URL + char.charUrl
 
     let contextText = 'is'
     if (gameOver)
