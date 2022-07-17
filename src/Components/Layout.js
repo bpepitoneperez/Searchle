@@ -8,12 +8,9 @@ import LoadingScreen from './LoadingScreen';
 import FireworksComponent from './FireworksComponent';
 import { getNewStats } from '../Utils/updatestats'
 import { checkLocalstorage } from '../Utils/localstoragestats'
-import { getCurrentImage } from '../Utils/loadimage'
-import { getCurrentCharacter } from '../Utils/loadcharacter'
-import { getCurrentGame } from '../Utils/loadcurrentgame'
 import _ from 'lodash'
 
-function Layout() {
+const Layout = ({image, setImage, character, setCharacter, currentGame, setCurrentGame}) => {
   const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
   const [show, setShow] = useState(false);
   const [hit, setHit] = useState(false);
@@ -28,18 +25,7 @@ function Layout() {
   const [showFireworks, setShowFireworks] = useState(false)
   const [showAlert, setShowAlert] = useState(false);
   const [firstVisit, setFirstVisit] = useState(true);
-  const [image, setImage] = useState({});
-  const [character, setCharacter] = useState({});
-  const [currentGame, setCurrentGame] = useState({});
   const [stats, setStats] = useState(checkLocalstorage());
-
-  useEffect(() => {
-    setImage(getCurrentImage());
-    setCharacter(getCurrentCharacter());
-    setCurrentGame(getCurrentGame());
-    
-  // empty dependency array means this effect will only run once (like componentDidMount in classes)
-  }, [])
 
   useEffect(() => {
     if (!_.isEmpty(currentGame))
