@@ -4,7 +4,7 @@ import { Fireworks } from 'fireworks/lib/react'
 const FireworksComponent = ({showFireworks}) => {
   let fxProps = {
     count: 1,
-    interval: 1000,
+    interval: 1500,
     colors: ['#faa622', '#ffe52c', '#7fe6ef', '#c4d70c', '#c22303'],
     canvasWidth: 600,
     canvasHeight: 800,
@@ -24,7 +24,8 @@ const FireworksComponent = ({showFireworks}) => {
             flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
-            position: 'fixed',}}
+            position: 'fixed',
+          }}
         >
             <Fireworks {...fxProps} />
         </div>

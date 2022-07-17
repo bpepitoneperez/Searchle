@@ -4,6 +4,7 @@ import Navbar from "./Navbar"
 import "../Styles/Layout.css"
 import InfoScreen from './InfoScreen';
 import StatsScreen from './StatsScreen';
+import LoadingScreen from './LoadingScreen';
 import FireworksComponent from './FireworksComponent';
 import { getResultsText } from '../Utils'
 import axios from "../Utils/axios";
@@ -50,7 +51,6 @@ function Layout() {
     
     if (process.env.NODE_ENV === 'production')
     {
-      console.log("Production")
       // GET request using axios inside useEffect React hook
       axios.get('/images/latest')
       .then(function (response) {
@@ -80,10 +80,7 @@ function Layout() {
     }
     else
     {
-      console.log("Not prod")
-      setTimeout(() => {
-        setDefaultImage();
-      }, 2000);
+      setDefaultImage();
     }
     
   // empty dependency array means this effect will only run once (like componentDidMount in classes)
@@ -177,7 +174,7 @@ function Layout() {
 
     setTimeout(() => {
       setShowFireworks(false);
-    }, 1000);
+    }, 1500);
   };
 
   useEffect(
@@ -225,8 +222,8 @@ function Layout() {
   }
 
   return (
-    <div className='Layout-header' onClick={clickScreen} >
-      LOADING...
+    <div className='loading-div' >
+      <LoadingScreen />
     </div>
   );
   

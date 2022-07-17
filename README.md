@@ -20,8 +20,6 @@ The frontend pulls the image for the day (currently updating every 30 minutes fo
 
 Adjust font size on zoom
 
-Move images out of public folder
-
 Cookies Integration with User Stats
 
 Make api not callable from anywhere but searchle front end
