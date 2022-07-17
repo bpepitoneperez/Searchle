@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Searchle/static/css/main.33b44bca.css",
+    "main.css": "/Searchle/static/css/main.2bb4c3d3.css",
     "main.js": "/Searchle/static/js/main.d19cd761.js",
     "static/media/meme-supreme.jpg": "/Searchle/static/media/meme-supreme.88f25beadc6963d54bfe.jpg",
     "static/media/222-cyberpunk-city.jpg": "/Searchle/static/media/222-cyberpunk-city.2561e556ffcd97d2871c.jpg",
@@ -40,11 +40,11 @@
     "static/media/jake-the-dog.png": "/Searchle/static/media/jake-the-dog.c027b00237d57482f28b.png",
     "static/media/ulala.png": "/Searchle/static/media/ulala.f27c21224b3c0ff9c334.png",
     "index.html": "/Searchle/index.html",
-    "main.33b44bca.css.map": "/Searchle/static/css/main.33b44bca.css.map",
+    "main.2bb4c3d3.css.map": "/Searchle/static/css/main.2bb4c3d3.css.map",
     "main.d19cd761.js.map": "/Searchle/static/js/main.d19cd761.js.map"
   },
   "entrypoints": [
-    "static/css/main.33b44bca.css",
+    "static/css/main.2bb4c3d3.css",
     "static/js/main.d19cd761.js"
   ]
 }
