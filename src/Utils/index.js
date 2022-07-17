@@ -1,9 +1,12 @@
-export const getResultsText = (minutes, seconds, shareText, times) => {
+export const getResultsText = (game, minutes, seconds, shareText, stats) => {
     let minutesText = minutes < 10 ? `0${minutes}` : minutes;
     let secondsText = seconds < 10 ? `0${seconds}` : seconds;
     let tempText = shareText;
     let tempBar = '0'
-    let newTimes = times;
+    let tempStats = stats;
+    let newTimes = stats.times;
+    let newPlayed = stats.played + 1;
+    let newWins = stats.wins;
 
     tempText += ` - ${minutesText}:${secondsText}\n`;
     
@@ -47,16 +50,17 @@ export const getResultsText = (minutes, seconds, shareText, times) => {
       else
       {
         tempText += oneOrLess.text;
-        tempBar += oneOrLess.bar;
+        tempBar = oneOrLess.bar;
         newTimes.oneOrLess += 1;
       }
+      newWins += 1;
     }
     else if (minutes === 1)
     {
       if (seconds === 0)
       {
         tempText += oneOrLess.text;
-        tempBar += oneOrLess.bar;
+        tempBar = oneOrLess.bar;
         newTimes.oneOrLess += 1;
       }
       else if (seconds <= 30)
@@ -68,16 +72,18 @@ export const getResultsText = (minutes, seconds, shareText, times) => {
       else
       {
         tempText += twoOrLess.text;
-        tempBar += twoOrLess.bar;
+        tempBar = twoOrLess.bar;
         newTimes.twoOrLess += 1;
       }
+
+      newWins += 1;
     }
     else if (minutes === 2)
     {
       if (seconds === 0)
       {
         tempText += twoOrLess.text;
-        tempBar += twoOrLess.bar;
+        tempBar = twoOrLess.bar;
         newTimes.twoOrLess += 1;
       }
       else if (seconds <= 30)
@@ -89,31 +95,53 @@ export const getResultsText = (minutes, seconds, shareText, times) => {
       else
       {
         tempText += threeOrLess.text;
-        tempBar += threeOrLess.bar;
+        tempBar = threeOrLess.bar;
         newTimes.threeOrLess += 1;
       }
+
+      newWins += 1;
     }
     else if (minutes === 3)
     {
       if (seconds === 0)
       {
         tempText += threeOrLess.text;
-        tempBar += threeOrLess.bar;
+        tempBar = threeOrLess.bar;
         newTimes.threeOrLess += 1;
+        newWins += 1;
       }
       else
       {
         tempText += overThree.text;
-        tempBar += overThree.bar;
+        tempBar = overThree.bar;
       }
     }
     else
     {
       tempText += overThree.text;
-      tempBar += overThree.bar;
+      tempBar = overThree.bar;
     }
     
     tempText += "\nhttps://bryanskyyy.github.io/Searchle/"
 
-    return [tempText, tempBar, newTimes];
+    let percent = Math.floor(newWins / newPlayed);
+
+    let newStreak = newWins > stats.wins ? stats.streak + 1 : 0
+
+    tempStats = {
+      played: newPlayed,
+      wins: newWins,
+      percent: percent,
+      streak: newStreak,
+      bestStreak: newStreak > stats.streak ? newStreak : stats.streak,
+      minutes: minutes,
+      seconds: seconds,
+      bestMinutes: minutes < stats.minutes ? minutes : stats.minutes,
+      bestSeconds: seconds < stats.seconds ? seconds : stats.seconds,
+      lastGamePlayed: game,
+      lastResultsBar: tempBar,
+      times: newTimes
+    }
+
+    return [tempText, tempBar, tempStats];
   }
