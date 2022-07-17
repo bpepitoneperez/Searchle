@@ -14,6 +14,12 @@
     height: 100%;
 }
 
+@media screen and (max-width: 380px){
+    .nav-div {
+        font-size: .8em;
+    }
+}
+
 .nav-content {
     width: 30%;
     height: 100%;

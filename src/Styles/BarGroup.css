@@ -4,10 +4,23 @@
     align-items: center;
     justify-content: space-between;
     height: 20%;
+    width: 100%;
 }
 
 .bar-graph-bar-div {
-    width: 95%;
+    width: 92%;
+}
+
+@media screen and (max-width: 500px){
+    .bar-graph-bar-div {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 380px){
+    .bar-graph-bar-div {
+        width: 88%;
+    }
 }
 
 .bar-graph-bar {
@@ -19,7 +32,6 @@
 .bar-graph-label {
     font-size: 13px;
     width: 5%;
-    margin-right: 4px;
 }
 
 .value-label {

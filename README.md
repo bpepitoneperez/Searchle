@@ -24,8 +24,6 @@ Cookies Integration with User Stats
 
 Make api not callable from anywhere but searchle front end
 
-Possibly add loading screen while api calls for image info
-
 Possibly rewrite selecting new image/character logic to create a random list of every possibility with assigned days, and automatically do it again when the list is done
 
 Add lots more images and characters
