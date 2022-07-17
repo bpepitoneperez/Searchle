@@ -27,6 +27,8 @@ function Layout() {
   const [showFireworks, setShowFireworks] = useState(false)
   const [showAlert, setShowAlert] = useState(false);
   const [firstVisit, setFirstVisit] = useState(true);
+  const [image, setImage] = useState(getCurrentImage());
+  const [character, setCharacter] = useState(getCurrentCharacter());
   const [currentGame, setCurrentGame] = useState(getCurrentGame());
   const [stats, setStats] = useState(checkLocalstorage());
 
@@ -115,22 +117,22 @@ function Layout() {
     [gameOver, seconds, showInfo]
   );
 
-  if (currentGame)
+  if (image.imgUrl && character.charUrl)
   {
     return (
       <div className='Layout-header' onClick={clickScreen} >
         <div className="navbar">
             <Navbar showStats={showStats} setShowStats={setShowStats} showInfo={showInfo}
-              setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} image={currentGame.image} />
+              setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} image={image} />
         </div>
         <div className='content'>
-            <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentGame.character, hit, setHit, miss, setMiss, endGame, gameOver, currentGame.image]} />
+            <Outlet context={[anchorPoint, show, handleClickMenu, setShow, character, hit, setHit, miss, setMiss, endGame, gameOver, image]} />
         </div>
         <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats}
-                  char={currentGame.character} handleShareClick={handleShareClick} resultsBar={resultsBar}
+                  char={character} handleShareClick={handleShareClick} resultsBar={resultsBar}
                   showAlert={showAlert} />
-        <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={currentGame.character} firstVisit={firstVisit}
-                  setFirstVisit={setFirstVisit} gameOver={gameOver} image={currentGame.image}/>
+        <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={character} firstVisit={firstVisit}
+                  setFirstVisit={setFirstVisit} gameOver={gameOver} image={image}/>
         <FireworksComponent showFireworks={showFireworks} />
       </div>
     );
