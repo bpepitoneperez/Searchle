@@ -14,7 +14,7 @@ This frontend is built with React (bootstrapped with Create-React-App) and React
 
 ## Backend
 
-The frontend pulls the image for the day (currently updating every 30 minutes for testing/beta) from a Node.js api backend, which is connected to a MongoDB
+The frontend pulls the image for the day (currently updating every hour for testing/beta) from a Node.js api backend, which is connected to a MongoDB
 
 ### PROJECT TODO
 
