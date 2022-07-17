@@ -27,13 +27,20 @@ function Layout() {
   const [showFireworks, setShowFireworks] = useState(false)
   const [showAlert, setShowAlert] = useState(false);
   const [firstVisit, setFirstVisit] = useState(true);
-  const [image, setImage] = useState(getCurrentImage());
-  const [character, setCharacter] = useState(getCurrentCharacter());
+  const [image, setImage] = useState({});
+  const [character, setCharacter] = useState({});
   const [currentGame, setCurrentGame] = useState(getCurrentGame());
   const [stats, setStats] = useState(checkLocalstorage());
 
   useEffect(() => {
-    if (stats.lastGamePlayed === currentGame)
+    setImage(getCurrentImage());
+    setCharacter(getCurrentCharacter());
+    
+  // empty dependency array means this effect will only run once (like componentDidMount in classes)
+  }, [])
+
+  useEffect(() => {
+    if (stats.lastGamePlayed === currentGame.current)
     {
       setShowInfo(false);
       setFirstVisit(false);
@@ -117,7 +124,7 @@ function Layout() {
     [gameOver, seconds, showInfo]
   );
 
-  if (image.imgUrl && character.charUrl)
+  if (image && character)
   {
     return (
       <div className='Layout-header' onClick={clickScreen} >
