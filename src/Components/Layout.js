@@ -74,7 +74,7 @@ function Layout() {
   const endGame = () => {
     setGameOver(true);
     
-    let results = getNewStats(currentGame, minutes, seconds, shareText, stats)
+    let results = getNewStats(currentGame.current, minutes, seconds, shareText, stats)
 
     setShareText(results[0])
 
