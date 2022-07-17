@@ -8,9 +8,12 @@ import LoadingScreen from './LoadingScreen';
 import FireworksComponent from './FireworksComponent';
 import { getNewStats } from '../Utils/updatestats'
 import { checkLocalstorage } from '../Utils/localstoragestats'
+import { getCurrentImage } from '../Utils/loadimage'
+import { getCurrentCharacter } from '../Utils/loadcharacter'
+import { getCurrentGame } from '../Utils/loadcurrentgame'
 import _ from 'lodash'
 
-const Layout = ({image, setImage, character, setCharacter, currentGame, setCurrentGame}) => {
+const Layout = () => {
   const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
   const [show, setShow] = useState(false);
   const [hit, setHit] = useState(false);
@@ -25,7 +28,18 @@ const Layout = ({image, setImage, character, setCharacter, currentGame, setCurre
   const [showFireworks, setShowFireworks] = useState(false)
   const [showAlert, setShowAlert] = useState(false);
   const [firstVisit, setFirstVisit] = useState(true);
+  const [image, setImage] = useState(false);
+  const [character, setCharacter] = useState(false);
+  const [currentGame, setCurrentGame] = useState(false);
   const [stats, setStats] = useState(checkLocalstorage());
+
+  useEffect(() => {
+    setImage(getCurrentImage());
+    setCharacter(getCurrentCharacter());
+    setCurrentGame(getCurrentGame());
+    
+  // empty dependency array means this effect will only run once (like componentDidMount in classes)
+  }, [])
 
   useEffect(() => {
     if (!_.isEmpty(currentGame))
@@ -116,7 +130,7 @@ const Layout = ({image, setImage, character, setCharacter, currentGame, setCurre
     [gameOver, seconds, showInfo]
   );
 
-  if (!_.isEmpty(image) && !_.isEmpty(character))
+  if (image && character)
   {
     return (
       <div className='Layout-header' onClick={clickScreen} >
