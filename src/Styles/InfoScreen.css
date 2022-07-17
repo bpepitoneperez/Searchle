@@ -151,7 +151,7 @@
     border-color: black;
 }
 
-@media screen and (max-width: 400px){
+@media screen and (max-width: 450px){
     #info-top {
         width: 80%;
     }
@@ -166,7 +166,11 @@
     }
     #char-img {
         max-height: 220px;
-    } 
+    }
+    #info-go {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
 }
 
 @media screen and (max-height: 650px){
