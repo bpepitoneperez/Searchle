@@ -11,6 +11,7 @@ import { checkLocalstorage } from '../Utils/localstoragestats'
 import { getCurrentImage } from '../Utils/loadimage'
 import { getCurrentCharacter } from '../Utils/loadcharacter'
 import { getCurrentGame } from '../Utils/loadcurrentgame'
+import _ from 'lodash'
 
 function Layout() {
   const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
@@ -124,7 +125,7 @@ function Layout() {
     [gameOver, seconds, showInfo]
   );
 
-  if (image && character)
+  if (!_.isEmpty(image) && !_.isEmpty(character))
   {
     return (
       <div className='Layout-header' onClick={clickScreen} >
