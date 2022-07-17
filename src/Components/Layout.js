@@ -30,28 +30,33 @@ function Layout() {
   const [firstVisit, setFirstVisit] = useState(true);
   const [image, setImage] = useState({});
   const [character, setCharacter] = useState({});
-  const [currentGame, setCurrentGame] = useState(getCurrentGame());
+  const [currentGame, setCurrentGame] = useState({});
   const [stats, setStats] = useState(checkLocalstorage());
 
   useEffect(() => {
     setImage(getCurrentImage());
     setCharacter(getCurrentCharacter());
+    setCurrentGame(getCurrentGame());
     
   // empty dependency array means this effect will only run once (like componentDidMount in classes)
   }, [])
 
   useEffect(() => {
-    if (stats.lastGamePlayed === currentGame.current)
+    if (!_.isEmpty(currentGame))
     {
-      setShowInfo(false);
-      setFirstVisit(false);
-      setGameOver(true);
-      setResultsBar(stats.lastResultsBar)
-      setShowStats(true);
-      setShareText(stats.lastShareText);
-    }
+      if (stats.lastGamePlayed === currentGame.current)
+      {
+        setShowInfo(false);
+        setFirstVisit(false);
+        setGameOver(true);
+        setResultsBar(stats.lastResultsBar)
+        setShowStats(true);
+        setShareText(stats.lastShareText);
+      }
 
-    localStorage.setItem('stats', JSON.stringify(stats));
+      localStorage.setItem('stats', JSON.stringify(stats));
+    }
+    
   }, [stats, currentGame]);
 
   const handleClickMenu = (event) => {
