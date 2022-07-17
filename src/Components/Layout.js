@@ -115,7 +115,7 @@ function Layout() {
     [gameOver, seconds, showInfo]
   );
 
-  if (currentGame.image.imgUrl && currentGame.character.charUrl)
+  if (currentGame)
   {
     return (
       <div className='Layout-header' onClick={clickScreen} >
