@@ -6,7 +6,7 @@ import InfoScreen from './InfoScreen';
 import StatsScreen from './StatsScreen';
 import LoadingScreen from './LoadingScreen';
 import FireworksComponent from './FireworksComponent';
-import { getResultsText } from '../Utils/index'
+import { getNewStats } from '../Utils/updatestats'
 import { checkLocalstorage } from '../Utils/localstoragestats'
 import { getCurrentImage } from '../Utils/loadimage'
 import { getCurrentCharacter } from '../Utils/loadcharacter'
@@ -27,9 +27,7 @@ function Layout() {
   const [showFireworks, setShowFireworks] = useState(false)
   const [showAlert, setShowAlert] = useState(false);
   const [firstVisit, setFirstVisit] = useState(true);
-  const [image, setImage] = useState(getCurrentImage());
-  const [character, setCharacter] = useState(getCurrentCharacter());
-  const [currentGame, setCurrentGame] = useState(5);
+  const [currentGame, setCurrentGame] = useState(getCurrentGame());
   const [stats, setStats] = useState(checkLocalstorage());
 
   useEffect(() => {
@@ -40,6 +38,7 @@ function Layout() {
       setGameOver(true);
       setResultsBar(stats.lastResultsBar)
       setShowStats(true);
+      setShareText(stats.lastShareText);
     }
 
     localStorage.setItem('stats', JSON.stringify(stats));
@@ -75,7 +74,7 @@ function Layout() {
   const endGame = () => {
     setGameOver(true);
     
-    let results = getResultsText(currentGame, minutes, seconds, shareText, stats)
+    let results = getNewStats(currentGame, minutes, seconds, shareText, stats)
 
     setShareText(results[0])
 
@@ -116,22 +115,22 @@ function Layout() {
     [gameOver, seconds, showInfo]
   );
 
-  if (image.imgUrl && character.charUrl)
+  if (currentGame.image.imgUrl && currentGame.character.charUrl)
   {
     return (
       <div className='Layout-header' onClick={clickScreen} >
         <div className="navbar">
             <Navbar showStats={showStats} setShowStats={setShowStats} showInfo={showInfo}
-              setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} image={image} />
+              setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} image={currentGame.image} />
         </div>
         <div className='content'>
-            <Outlet context={[anchorPoint, show, handleClickMenu, setShow, character, hit, setHit, miss, setMiss, endGame, gameOver, image]} />
+            <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentGame.character, hit, setHit, miss, setMiss, endGame, gameOver, currentGame.image]} />
         </div>
         <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats}
-                  char={character} handleShareClick={handleShareClick} resultsBar={resultsBar}
+                  char={currentGame.character} handleShareClick={handleShareClick} resultsBar={resultsBar}
                   showAlert={showAlert} />
-        <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={character} firstVisit={firstVisit}
-                  setFirstVisit={setFirstVisit} gameOver={gameOver} image={image}/>
+        <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={currentGame.character} firstVisit={firstVisit}
+                  setFirstVisit={setFirstVisit} gameOver={gameOver} image={currentGame.image}/>
         <FireworksComponent showFireworks={showFireworks} />
       </div>
     );

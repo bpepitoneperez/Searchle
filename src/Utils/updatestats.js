@@ -1,4 +1,4 @@
-export const getResultsText = (game, minutes, seconds, shareText, stats) => {
+export const getNewStats = (game, minutes, seconds, shareText, stats) => {
     let minutesText = minutes < 10 ? `0${minutes}` : minutes;
     let secondsText = seconds < 10 ? `0${seconds}` : seconds;
     let tempText = shareText;
@@ -8,7 +8,7 @@ export const getResultsText = (game, minutes, seconds, shareText, stats) => {
     let newPlayed = stats.played + 1;
     let newWins = stats.wins;
 
-    tempText += ` - ${minutesText}:${secondsText}\n`;
+    tempText += ` #${game} - ${minutesText}:${secondsText}\n`;
     
     let thirtyOrLess = {
       text: '🔍 🟩 ⬛ ⬛ ⬛ ⬛ ⬛',
@@ -134,12 +134,11 @@ export const getResultsText = (game, minutes, seconds, shareText, stats) => {
       percent: percent,
       streak: newStreak,
       bestStreak: newStreak > stats.streak ? newStreak : stats.streak,
-      minutes: minutes,
-      seconds: seconds,
-      bestMinutes: minutes < stats.minutes ? minutes : stats.minutes,
-      bestSeconds: seconds < stats.seconds ? seconds : stats.seconds,
+      bestMinutes: minutes < stats.bestMinutes || newPlayed === 1 ? minutes : stats.bestMinutes,
+      bestSeconds: seconds < stats.bestSeconds || newPlayed === 1 ? seconds : stats.bestSeconds,
       lastGamePlayed: game,
       lastResultsBar: tempBar,
+      lastShareText: tempText,
       times: newTimes
     }
 

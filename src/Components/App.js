@@ -7,9 +7,7 @@ const App = () => {
   const [anchorPoint, show, handleClickMenu, setShow, character, hit, setHit, miss, setMiss, endGame, gameOver, image] = useOutletContext();
   const [clickSpot, setClickSpot] = useState({ x: 0, y: 0 });
 
-  let imgUrl = "/imgs/meme-supreme.jpg"
-    if (image.imgUrl)
-      imgUrl = image.imgUrl
+  let imgUrl = image.imgUrl
 
   const handleClick = e => {
     e.preventDefault();

@@ -9,9 +9,7 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
         setFirstVisit(false);
     }
 
-    let charUrl = "/chars/sasuke-uchiha.png"
-    if (char.charUrl)
-        charUrl = char.charUrl
+    let charUrl = char.charUrl
 
     let contextText = 'is'
     if (gameOver)
