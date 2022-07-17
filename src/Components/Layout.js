@@ -46,48 +46,75 @@ function Layout() {
       }
     }
   );
-
   useEffect(() => {
-    // GET request using axios inside useEffect React hook
-    axios.get('/images/latest')
-    .then(function (response) {
-      // handle success
-      setImage(response.data);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log('Get image latest',error);
-    })
-    .then(function () {
-      // always executed
-    });
+    
+    if (process.env.NODE_ENV === 'production')
+    {
+      console.log("Production")
+      // GET request using axios inside useEffect React hook
+      axios.get('/images/latest')
+      .then(function (response) {
+        // handle success
+        setImage(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log('Get image latest',error);
+      })
+      .then(function () {
+        // always executed
+      });
 
-    axios.get('/characters/latest')
-    .then(function (response) {
-      // handle success
-      setCharacter(response.data);
-    })
-    .catch(function (error) {
-      // handle error
-      console.log('Get character latest',error);
-    })
-    .then(function () {
-      // always executed
-    });
+      axios.get('/characters/latest')
+      .then(function (response) {
+        // handle success
+        setCharacter(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log('Get character latest',error);
+      })
+      .then(function () {
+        // always executed
+      });
+    }
+    else
+    {
+      console.log("Not prod")
+      setTimeout(() => {
+        setDefaultImage();
+      }, 2000);
+    }
+    
   // empty dependency array means this effect will only run once (like componentDidMount in classes)
   }, [])
 
-  
+  const setDefaultImage = () => {
+    setImage(
+      {
+        _id:"62ce2c5060d9fbfcd8e3a0ef",
+        title:"Dreamcast Explosion",
+        author:"Pierre Roussel",
+        authorUrl:"https://www.etsy.com/shop/Angerinet",
+        imgUrl:"/imgs/pierre-roussel-dreamcast-web.jpg",
+        characters:["62ce2c4f60d9fbfcd8e3a0e1","62ce2c4f60d9fbfcd8e3a0e2","62ce2c4f60d9fbfcd8e3a0e3","62ce2c4f60d9fbfcd8e3a0e4","62ce2c4f60d9fbfcd8e3a0e0"],
+        __v:0
+      }
+      );
+    
+      setCharacter(
+      {
+        _id:"62ce2c4f60d9fbfcd8e3a0e0",
+          name:"Mew",
+          source:"Jet Set Radio",
+          xPos:66,
+          yPos:73,
+          charUrl:"/chars/mew-jsr.png",
+          __v:0
+      }
+      );
+  }
 
-  // const [ currentChar, setCurrentChar ] = useState (
-  //   {
-  //     charName: "Sasuke Uchiha",
-  //     source: "Naruto",
-  //     imgUrl: "/chars/sasuke uchiha.png",
-  //     xPos: 15,
-  //     yPos: 23
-  //   }
-  // )
 
   const handleClickMenu = (event) => {
     event.preventDefault();
@@ -177,22 +204,33 @@ function Layout() {
     [gameOver, seconds, showInfo]
   );
 
+  if (image.imgUrl && character.charUrl)
+  {
+    return (
+      <div className='Layout-header' onClick={clickScreen} >
+        <div className="navbar">
+            <Navbar showStats={showStats} setShowStats={setShowStats} showInfo={showInfo}
+              setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} image={image} />
+        </div>
+        <div className='content'>
+            <Outlet context={[anchorPoint, show, handleClickMenu, setShow, character, hit, setHit, miss, setMiss, endGame, gameOver, image]} />
+        </div>
+        <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats}
+          char={character} handleShareClick={handleShareClick} resultsBar={resultsBar} showAlert={showAlert}/>
+        <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={character} firstVisit={firstVisit}
+          setFirstVisit={setFirstVisit} gameOver={gameOver} image={image}/>
+        <FireworksComponent showFireworks={showFireworks} />
+      </div>
+    );
+  }
+
   return (
     <div className='Layout-header' onClick={clickScreen} >
-      <div className="navbar">
-          <Navbar showStats={showStats} setShowStats={setShowStats} showInfo={showInfo}
-            setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} image={image} />
-      </div>
-      <div className='content'>
-          <Outlet context={[anchorPoint, show, handleClickMenu, setShow, character, hit, setHit, miss, setMiss, endGame, gameOver, image]} />
-      </div>
-      <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats}
-        char={character} handleShareClick={handleShareClick} resultsBar={resultsBar} showAlert={showAlert}/>
-      <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={character} firstVisit={firstVisit}
-        setFirstVisit={setFirstVisit} gameOver={gameOver} image={image}/>
-      <FireworksComponent showFireworks={showFireworks} />
+      LOADING...
     </div>
   );
+  
+  
 }
 
 export default Layout;

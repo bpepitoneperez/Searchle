@@ -9,7 +9,9 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
         setFirstVisit(false);
     }
 
-    let charUrl = process.env.PUBLIC_URL + char.charUrl
+    let charUrl = "/chars/sasuke-uchiha.png"
+    if (char.charUrl)
+        charUrl = char.charUrl
 
     let contextText = 'is'
     if (gameOver)
@@ -27,7 +29,7 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
                             <div id='info-top-right' className="info-top-div"><MdClose id='info-close' onClick={closeInfo}/></div>
                         </div>
                         <div id='info-game-info' className="info-item">
-                            <p>Search for today's hidden character in the image</p>
+                            <p>Search for today's hidden character</p>
                             <p>Your score is based on how long it takes you</p>
                             <p>The timer starts once this info screen is closed</p>
                         </div>
@@ -35,7 +37,7 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
                             <div id='info-char-text'>
                                 <p>Today's character is <strong>{char.name}</strong> from <strong>{char.source}</strong></p>
                             </div>
-                            <img id='char-img' src={charUrl} onClick={closeInfo} alt={char.name} />
+                            <img id='char-img' src={require(`../Assets${charUrl}`)} onClick={closeInfo} alt={char.name} />
                         </div>
                         <button id='info-go' className="info-item" onClick={closeInfo}>Start</button>
                     </div>
@@ -54,14 +56,14 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
                         </div>
                         {/* <div id='info-close-div' className="info-item"></div> */}
                         <div id='info-game-info' className="info-item">
-                            <p>Search for today's hidden character in the image</p>
+                            <p>Search for today's hidden character</p>
                             <p>Your score is based on how long it takes you</p>
                         </div>
                         <div id='info-char-details' className="info-item">
                             <div id='info-char-text'>
                                 <p>Today's character {contextText} <strong>{char.name}</strong> from <strong>{char.source}</strong></p>
                             </div>
-                            <img id='char-img' src={charUrl} onClick={closeInfo} alt={char.name} />
+                            <img id='char-img' src={require(`../Assets${charUrl}`)} onClick={closeInfo} alt={char.name} />
                         </div>
                         <a id='info-artist' className="info-item" href={image.authorUrl} target="_blank" rel="noreferrer">
                             Support today's artist

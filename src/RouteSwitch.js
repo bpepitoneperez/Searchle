@@ -4,7 +4,6 @@ import NotFound from "./Components/NotFound";
 import Layout from "./Components/Layout";
 
 const RouteSwitch = () => {
-  console.log(process.env.PUBLIC_URL)
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Routes>
