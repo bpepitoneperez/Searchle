@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Searchle/static/css/main.b2e29751.css",
-    "main.js": "/Searchle/static/js/main.c9819eae.js",
+    "main.js": "/Searchle/static/js/main.8a23fc5b.js",
     "static/media/meme-supreme.jpg": "/Searchle/static/media/meme-supreme.88f25beadc6963d54bfe.jpg",
     "static/media/222-cyberpunk-city.jpg": "/Searchle/static/media/222-cyberpunk-city.2561e556ffcd97d2871c.jpg",
     "static/media/isaac-clarke.png": "/Searchle/static/media/isaac-clarke.5d2bfb5777500c5d88f8.png",
@@ -41,10 +41,10 @@
     "static/media/ulala.png": "/Searchle/static/media/ulala.f27c21224b3c0ff9c334.png",
     "index.html": "/Searchle/index.html",
     "main.b2e29751.css.map": "/Searchle/static/css/main.b2e29751.css.map",
-    "main.c9819eae.js.map": "/Searchle/static/js/main.c9819eae.js.map"
+    "main.8a23fc5b.js.map": "/Searchle/static/js/main.8a23fc5b.js.map"
   },
   "entrypoints": [
     "static/css/main.b2e29751.css",
-    "static/js/main.c9819eae.js"
+    "static/js/main.8a23fc5b.js"
   ]
 }
