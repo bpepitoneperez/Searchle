@@ -124,7 +124,8 @@ export const getNewStats = (game, minutes, seconds, shareText, stats) => {
     
     tempText += "\nhttps://bryanskyyy.github.io/Searchle/"
 
-    let percent = Math.floor((newWins / newPlayed) * 100);
+    let percentNum = Math.floor((newWins / newPlayed) * 100);
+    let percent = `${percentNum}%`
 
     let newStreak = newWins > stats.wins ? stats.streak + 1 : 0
 
