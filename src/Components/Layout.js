@@ -11,7 +11,6 @@ import { checkLocalstorage } from '../Utils/localstoragestats'
 import { getCurrentImage } from '../Utils/loadimage'
 import { getCurrentCharacter } from '../Utils/loadcharacter'
 import { getCurrentGame } from '../Utils/loadcurrentgame'
-import _ from 'lodash'
 
 const Layout = () => {
   const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
@@ -34,15 +33,20 @@ const Layout = () => {
   const [stats, setStats] = useState(checkLocalstorage());
 
   useEffect(() => {
-    setImage(getCurrentImage());
-    setCharacter(getCurrentCharacter());
-    setCurrentGame(getCurrentGame());
+    let newImage = getCurrentImage();
+    setImage(newImage);
+
+    let newChar = getCurrentCharacter();
+    setCharacter(newChar);
+
+    let newGame = getCurrentGame();
+    setCurrentGame(newGame);
     
   // empty dependency array means this effect will only run once (like componentDidMount in classes)
   }, [])
 
   useEffect(() => {
-    if (!_.isEmpty(currentGame))
+    if (currentGame)
     {
       if (stats.lastGamePlayed === currentGame.current)
       {
