@@ -8,9 +8,8 @@ import LoadingScreen from './LoadingScreen';
 import FireworksComponent from './FireworksComponent';
 import { getNewStats } from '../Utils/updatestats'
 import { checkLocalstorage } from '../Utils/localstoragestats'
-import { getCurrentImage } from '../Utils/loadimage'
-import { getCurrentCharacter } from '../Utils/loadcharacter'
-import { getCurrentGame } from '../Utils/loadcurrentgame'
+import { defaultGame } from '../Utils/DefaultGame'
+import axios from "../Utils/axios";
 
 const Layout = () => {
   const [anchorPoint, setAnchorPoint] = useState({ x: 0, y: 0 });
@@ -27,20 +26,31 @@ const Layout = () => {
   const [showFireworks, setShowFireworks] = useState(false)
   const [showAlert, setShowAlert] = useState(false);
   const [firstVisit, setFirstVisit] = useState(true);
-  const [image, setImage] = useState(false);
-  const [character, setCharacter] = useState(false);
   const [currentGame, setCurrentGame] = useState(false);
   const [stats, setStats] = useState(checkLocalstorage());
 
   useEffect(() => {
-    let newImage = getCurrentImage();
-    setImage(newImage);
-
-    let newChar = getCurrentCharacter();
-    setCharacter(newChar);
-
-    let newGame = getCurrentGame();
-    setCurrentGame(newGame);
+    if (process.env.NODE_ENV === 'production')
+    {
+      // GET request using axios inside useEffect React hook
+      axios.get('/games/latest')
+      .then(function (response) {
+        // handle success
+        setCurrentGame(response.data)
+        return ;
+      })
+      .catch(function (error) {
+        // handle error
+        console.log('Get game latest',error);
+      })
+      .then(function () {
+        // always executed
+      });
+    }
+    else
+    {
+      setCurrentGame(defaultGame);
+    }
     
   // empty dependency array means this effect will only run once (like componentDidMount in classes)
   }, [])
@@ -134,22 +144,23 @@ const Layout = () => {
     [gameOver, seconds, showInfo]
   );
 
-  if (image && character)
+  
+  if (currentGame)
   {
     return (
       <div className='Layout-header' onClick={clickScreen} >
         <div className="navbar">
             <Navbar showStats={showStats} setShowStats={setShowStats} showInfo={showInfo}
-              setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} image={image} />
+              setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} image={currentGame.image} />
         </div>
         <div className='content'>
-            <Outlet context={[anchorPoint, show, handleClickMenu, setShow, character, hit, setHit, miss, setMiss, endGame, gameOver, image]} />
+            <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentGame.character, hit, setHit, miss, setMiss, endGame, gameOver, currentGame.image]} />
         </div>
         <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats}
-                  char={character} handleShareClick={handleShareClick} resultsBar={resultsBar}
+                  char={currentGame.character} handleShareClick={handleShareClick} resultsBar={resultsBar}
                   showAlert={showAlert} />
-        <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={character} firstVisit={firstVisit}
-                  setFirstVisit={setFirstVisit} gameOver={gameOver} image={image}/>
+        <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={currentGame.character} firstVisit={firstVisit}
+                  setFirstVisit={setFirstVisit} gameOver={gameOver} image={currentGame.image}/>
         <FireworksComponent showFireworks={showFireworks} />
       </div>
     );

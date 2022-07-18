@@ -1,6 +1,4 @@
-import axios from "./axios";
-
-const defaultGame = {
+export const defaultGame = {
   current: 1,
   image: {
     _id:"62ce2c5060d9fbfcd8e3a0ef",
@@ -20,27 +18,4 @@ const defaultGame = {
       charUrl:"/chars/mew-jsr.png",
       __v:0
   }
-}
-
-export const getCurrentGame = () => {
-    if (process.env.NODE_ENV === 'production')
-    {
-      // GET request using axios inside useEffect React hook
-      axios.get('/games/latest')
-      .then(function (response) {
-        // handle success
-        return response.data;
-      })
-      .catch(function (error) {
-        // handle error
-        console.log('Get game latest',error);
-      })
-      .then(function () {
-        // always executed
-      });
-    }
-    else
-    {
-      return defaultGame;
-    }
 }

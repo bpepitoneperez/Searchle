@@ -18,9 +18,9 @@ The frontend pulls the image for the day (currently updating every hour for test
 
 ### PROJECT TODO
 
-Adjust font size on zoom
+Stats next game timer
 
-Cookies Integration with User Stats
+Adjust font size on zoom
 
 Make api not callable from anywhere but searchle front end
 
