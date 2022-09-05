@@ -1,6 +1,6 @@
 # Searchle React Frontend
 
-Play here: https://bryanskyyy.github.io/Searchle/
+Play here: https://bpepitoneperez.github.io/Searchle/
 
 Basically a Wordle x Where's Waldo fusion
 
