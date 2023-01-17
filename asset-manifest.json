@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Searchle/static/css/main.0d1b8eeb.css",
-    "main.js": "/Searchle/static/js/main.76de945b.js",
+    "main.js": "/Searchle/static/js/main.8d4a65db.js",
     "static/media/meme-supreme.jpg": "/Searchle/static/media/meme-supreme.88f25beadc6963d54bfe.jpg",
     "static/media/sonic.png": "/Searchle/static/media/sonic.11b5c5a5d92bc3769ea7.png",
     "static/media/marth.png": "/Searchle/static/media/marth.809d3437cdc68ee4d0b8.png",
@@ -118,10 +118,10 @@
     "static/media/manaphy.png": "/Searchle/static/media/manaphy.a900ecc6c7310c448256.png",
     "index.html": "/Searchle/index.html",
     "main.0d1b8eeb.css.map": "/Searchle/static/css/main.0d1b8eeb.css.map",
-    "main.76de945b.js.map": "/Searchle/static/js/main.76de945b.js.map"
+    "main.8d4a65db.js.map": "/Searchle/static/js/main.8d4a65db.js.map"
   },
   "entrypoints": [
     "static/css/main.0d1b8eeb.css",
-    "static/js/main.76de945b.js"
+    "static/js/main.8d4a65db.js"
   ]
 }
