@@ -19,7 +19,7 @@ const Layout = () => {
   const [seconds, setSeconds] =  useState(0);
   const [miss, setMiss] = useState(false);
   const [resultsBar, setResultsBar] = useState('0')
-  const [shareText, setShareText] = useState('Searchle Beta')
+  const [shareText, setShareText] = useState('Searchle')
   const [gameOver, setGameOver] = useState(false);
   const [showInfo, setShowInfo] = useState(true);
   const [showStats, setShowStats] = useState(false);
@@ -30,10 +30,16 @@ const Layout = () => {
   const [stats, setStats] = useState(checkLocalstorage());
 
   useEffect(() => {
-    if (process.env.NODE_ENV === 'production')
-    {
       // GET request using axios inside useEffect React hook
-      axios.get('/games/latest')
+      let today = new Date()
+      console.log(today)
+      axios.get('/games/latest', {
+        headers: {
+          'year': today.getFullYear(),
+          'month': today.getMonth(),
+          'day': today.getDate()
+        }
+      })
       .then(function (response) {
         // handle success
         setCurrentGame(response.data)
@@ -46,11 +52,6 @@ const Layout = () => {
       .then(function () {
         // always executed
       });
-    }
-    else
-    {
-      setCurrentGame(defaultGame);
-    }
     
   // empty dependency array means this effect will only run once (like componentDidMount in classes)
   }, [])
