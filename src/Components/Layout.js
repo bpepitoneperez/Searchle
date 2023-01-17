@@ -32,7 +32,7 @@ const Layout = () => {
   useEffect(() => {
       // GET request using axios inside useEffect React hook
       let today = new Date()
-      console.log(today)
+      //console.log(today)
       axios.get('/games/latest', {
         headers: {
           'year': today.getFullYear(),
@@ -71,7 +71,7 @@ const Layout = () => {
 
       localStorage.setItem('stats', JSON.stringify(stats));
 
-      console.log(stats)
+      //console.log(stats)
     }
     
   }, [stats, currentGame]);
@@ -95,7 +95,7 @@ const Layout = () => {
     if (e.target.id !== 'game-img' && e.target.id !== 'checkmark' && e.target.className !== 'circle-div'
       && e.target.nodeName !== 'path' && e.target.id !== 'miss-icon' && e.target.id !== 'aiming')
     {
-      console.log(e);
+      //console.log(e);
       setShow(false);
     }
 
@@ -116,7 +116,7 @@ const Layout = () => {
     
     setShowStats(true);
 
-    console.log(stats)
+    //console.log(stats)
 
     setShowFireworks(true);
 
