@@ -4,12 +4,12 @@ import "../Styles/BarChart.css"
 
 const BarChart = ({stats, gameOver, minutes, seconds, resultsBar}) => {
     const [data, setData] = useState([
-      { name: '0:30', value: stats.times.thirtyOrLess },
-      { name: '1:00', value: stats.times.oneOrLess },
-      { name: '1:30', value: stats.times.oneThirtyOrLess },
-      { name: '2:00', value: stats.times.twoOrLess },
-      { name: '2:30', value: stats.times.twoThirtyOrLess },
-      { name: '3:00', value: stats.times.threeOrLess }
+      { name: '0:10', value: stats.times.tenSecondsOrLess },
+      { name: '0:20', value: stats.times.twentySecondsOrLess },
+      { name: '0:30', value: stats.times.thirtySecondsOrLess },
+      { name: '1:00', value: stats.times.oneMinuteOrLess },
+      { name: '1:30', value: stats.times.oneMinuteThirtySecondsOrLess },
+      { name: '2:00', value: stats.times.twoMinutesOrLess }
     ])
     
 

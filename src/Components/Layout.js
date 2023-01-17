@@ -69,6 +69,8 @@ const Layout = () => {
       }
 
       localStorage.setItem('stats', JSON.stringify(stats));
+
+      console.log(stats)
     }
     
   }, [stats, currentGame]);
@@ -112,6 +114,8 @@ const Layout = () => {
     setStats(results[2]);
     
     setShowStats(true);
+
+    console.log(stats)
 
     setShowFireworks(true);
 

@@ -37,7 +37,7 @@ const navbar = ({showStats, setShowStats, showInfo, setShowInfo, setFirstVisit, 
           <div className='nav-link-div' onClick={clickInfo}><MdHelp /></div>
         </div>
         <div id='nav-div-middle' className='nav-content'>
-          <div id='nav-brand'>Searchle(beta)</div>
+          <div id='nav-brand'>Searchle</div>
         </div>
         <div id='nav-div-right' className='nav-content'>
           <div className='nav-link-div'>

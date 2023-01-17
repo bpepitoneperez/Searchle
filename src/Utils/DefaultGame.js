@@ -1,5 +1,5 @@
 export const defaultGame = {
-  current: 1,
+  current: 7,
   image: {
     _id:"62ce2c5060d9fbfcd8e3a0ef",
     title:"Dreamcast Explosion",

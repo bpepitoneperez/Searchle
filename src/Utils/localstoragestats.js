@@ -1,13 +1,13 @@
 export const checkLocalstorage = () =>
 {
     const stats = JSON.parse(localStorage.getItem('stats'));
-      if (stats) {
+      if (stats && !stats.beta) {
         return stats;
       }
       else
       {
         let defaultStats = {
-          beta: true,
+          beta: false,
           played: 0,
           wins: 0,
           percent: 0,
@@ -19,12 +19,12 @@ export const checkLocalstorage = () =>
           lastShareText: "Searchle Share",
           lastResultsBar: '0',
           times: {
-            thirtyOrLess: 0,
-            oneOrLess: 0,
-            oneThirtyOrLess: 0,
-            twoOrLess: 0,
-            twoThirtyOrLess: 0,
-            threeOrLess: 0
+            tenSecondsOrLess: 0,
+            twentySecondsOrLess: 0,
+            thirtySecondsOrLess: 0,
+            oneMinuteOrLess: 0,
+            oneMinuteThirtySecondsOrLess: 0,
+            twoMinutesOrLess: 0
           }
         }
         return defaultStats;

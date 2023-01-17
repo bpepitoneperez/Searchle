@@ -22,10 +22,6 @@ The frontend pulls the image for the day (currently updating every hour for test
 
 Stats next game timer
 
-Actually fix the stats
-
-Adjust font size on zoom
-
 Make api not callable from anywhere but searchle front end
 
 Rewrite game creation logic to create the next X number of days instead of creating a new game every day

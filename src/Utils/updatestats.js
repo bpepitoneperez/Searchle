@@ -10,48 +10,60 @@ export const getNewStats = (game, minutes, seconds, shareText, stats) => {
 
     tempText += ` #${game} - ${minutesText}:${secondsText}\n`;
     
-    let thirtyOrLess = {
+    let tenSecondsOrLess = {
       text: '🔍 🟩 ⬛ ⬛ ⬛ ⬛ ⬛',
+      bar: '0:10'
+    }
+    let twentySecondsOrLess = {
+      text: '🔍 🟥  🟩 ⬛ ⬛ ⬛ ⬛',
+      bar: '0:20'
+    }
+    let thirtySecondsOrLess = {
+      text: '🔍 🟥  🟥  🟩 ⬛ ⬛ ⬛',
       bar: '0:30'
     }
-    let oneOrLess = {
-      text: '🔍 🟥  🟩 ⬛ ⬛ ⬛ ⬛',
+    let oneMinuteOrLess = {
+      text: '🔍 🟥  🟥  🟥  🟩 ⬛ ⬛',
       bar: '1:00'
     }
-    let oneThirtyOrLess = {
-      text: '🔍 🟥  🟥  🟩 ⬛ ⬛ ⬛',
+    let oneMinuteThirtySecondsOrLess = {
+      text: '🔍 🟥  🟥  🟥  🟥  🟩 ⬛',
       bar: '1:30'
     }
-    let twoOrLess = {
-      text: '🔍 🟥  🟥  🟥  🟩 ⬛ ⬛',
+    let twoMinutesOrLess = {
+      text: '🔍 🟥  🟥  🟥  🟥  🟥  🟩',
       bar: '2:00'
     }
-    let twoThirtyOrLess = {
-      text: '🔍 🟥  🟥  🟥  🟥  🟩 ⬛',
-      bar: '2:30'
-    }
-    let threeOrLess = {
-      text: '🔍 🟥  🟥  🟥  🟥  🟥  🟩',
-      bar: '3:00'
-    }
-    let overThree = {
+    let overTwoMinutes = {
       text: '🔍 🟥  🟥  🟥  🟥  🟥  🟥',
       bar: '0'
     }
     
     if (minutes === 0)
     {
-      if (seconds <= 30)
+      if (seconds <= 10)
       {
-        tempText += thirtyOrLess.text;
-        tempBar = thirtyOrLess.bar;
-        newTimes.thirtyOrLess += 1;
+        tempText += tenSecondsOrLess.text;
+        tempBar = tenSecondsOrLess.bar;
+        newTimes.tenSecondsOrLess += 1;
+      }
+      else if (seconds <= 20)
+      {
+        tempText += twentySecondsOrLess.text;
+        tempBar = twentySecondsOrLess.bar;
+        newTimes.twentySecondsOrLess += 1;
+      }
+      else if (seconds <= 30)
+      {
+        tempText += thirtySecondsOrLess.text;
+        tempBar = thirtySecondsOrLess.bar;
+        newTimes.thirtySecondsOrLess += 1;
       }
       else
       {
-        tempText += oneOrLess.text;
-        tempBar = oneOrLess.bar;
-        newTimes.oneOrLess += 1;
+        tempText += oneMinuteOrLess.text;
+        tempBar = oneMinuteOrLess.bar;
+        newTimes.oneMinuteOrLess += 1;
       }
       newWins += 1;
     }
@@ -59,21 +71,21 @@ export const getNewStats = (game, minutes, seconds, shareText, stats) => {
     {
       if (seconds === 0)
       {
-        tempText += oneOrLess.text;
-        tempBar = oneOrLess.bar;
-        newTimes.oneOrLess += 1;
+        tempText += oneMinuteOrLess.text;
+        tempBar = oneMinuteOrLess.bar;
+        newTimes.oneMinuteOrLess += 1;
       }
       else if (seconds <= 30)
       {
-        tempText += oneThirtyOrLess.text;
-        tempBar = oneThirtyOrLess.bar;
-        newTimes.oneThirtyOrLess += 1;
+        tempText += oneMinuteThirtySecondsOrLess.text;
+        tempBar = oneMinuteThirtySecondsOrLess.bar;
+        newTimes.oneMinuteThirtySecondsOrLess += 1;
       }
       else
       {
-        tempText += twoOrLess.text;
-        tempBar = twoOrLess.bar;
-        newTimes.twoOrLess += 1;
+        tempText += twoMinutesOrLess.text;
+        tempBar = twoMinutesOrLess.bar;
+        newTimes.twoMinutesOrLess += 1;
       }
 
       newWins += 1;
@@ -82,44 +94,21 @@ export const getNewStats = (game, minutes, seconds, shareText, stats) => {
     {
       if (seconds === 0)
       {
-        tempText += twoOrLess.text;
-        tempBar = twoOrLess.bar;
-        newTimes.twoOrLess += 1;
-      }
-      else if (seconds <= 30)
-      {
-        tempText += twoThirtyOrLess.text;
-        tempBar = twoThirtyOrLess.bar;
-        newTimes.twoThirtyOrLess += 1;
-      }
-      else
-      {
-        tempText += threeOrLess.text;
-        tempBar = threeOrLess.bar;
-        newTimes.threeOrLess += 1;
-      }
-
-      newWins += 1;
-    }
-    else if (minutes === 3)
-    {
-      if (seconds === 0)
-      {
-        tempText += threeOrLess.text;
-        tempBar = threeOrLess.bar;
-        newTimes.threeOrLess += 1;
+        tempText += twoMinutesOrLess.text;
+        tempBar = twoMinutesOrLess.bar;
+        newTimes.twoMinutesOrLess += 1;
         newWins += 1;
       }
       else
       {
-        tempText += overThree.text;
-        tempBar = overThree.bar;
+        tempText += overTwoMinutes.text;
+        tempBar = overTwoMinutes.bar;
       }
     }
     else
     {
-      tempText += overThree.text;
-      tempBar = overThree.bar;
+      tempText += overTwoMinutes.text;
+      tempBar = overTwoMinutes.bar;
     }
     
     tempText += "\nhttps://bryanskyyy.github.io/Searchle/"
@@ -127,7 +116,16 @@ export const getNewStats = (game, minutes, seconds, shareText, stats) => {
     let percentNum = Math.floor((newWins / newPlayed) * 100);
     let percent = `${percentNum}%`
 
-    let newStreak = newWins > stats.wins ? stats.streak + 1 : 0
+    let newStreak = 0
+    
+    if (newWins > stats.wins && stats.lastGamePlayed === game - 1)
+    {
+      newStreak = stats.streak + 1
+    }
+    else if(newWins > stats.wins)
+    {
+      newStreak = 1
+    }
 
     tempStats = {
       played: newPlayed,
