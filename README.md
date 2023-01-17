@@ -4,6 +4,8 @@ Play here: https://bpepitoneperez.github.io/Searchle/
 
 Basically a Wordle x Where's Waldo fusion
 
+Currently there are 7 images and 108 total characters in those images, with plans to add more in the future.
+
 ## About
 
 Originally part of the coursework for The Odin Project to make a Where's Waldo website to learn Firebase and practice React, I thought making it a Wordle clone would be more interesting and fun.
@@ -24,7 +26,6 @@ Adjust font size on zoom
 
 Make api not callable from anywhere but searchle front end
 
-Possibly rewrite selecting new image/character logic to create a random list of every possibility with assigned days, and automatically do it again when the list is done
+Rewrite game creation logic to create the next X number of days instead of creating a new game every day
 
-Add lots more images and characters
-
+Rewrite api logic to ask for the current day from the client
