@@ -66,7 +66,7 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
                         <a id='info-artist' className="info-item" href={image.authorUrl} target="_blank" rel="noreferrer">
                             Support today's artist
                         </a>
-                        <div id='info-blurb' className="info-item">New Searchle everyday! (actually every hour for testing)</div>
+                        <div id='info-blurb' className="info-item">New Searchle everyday!</div>
                     </div>
                 </div>
             );

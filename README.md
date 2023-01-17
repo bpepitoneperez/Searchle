@@ -16,14 +16,4 @@ This frontend is built with React (bootstrapped with Create-React-App) and React
 
 ## Backend
 
-The frontend pulls the image for the day (currently updating every hour for testing/beta) from a Node.js api backend, which is connected to a MongoDB
-
-## PROJECT TODO
-
-Stats next game timer
-
-Make api not callable from anywhere but searchle front end
-
-Rewrite game creation logic to create the next X number of days instead of creating a new game every day
-
-Rewrite api logic to ask for the current day from the client
+The frontend pulls the image for the day from a Node.js api backend, which is connected to a MongoDB
