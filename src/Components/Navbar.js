@@ -45,11 +45,6 @@ const navbar = ({showStats, setShowStats, showInfo, setShowInfo, setFirstVisit, 
                 <MdBrush />
             </a>
           </div>
-          <div className='nav-link-div'>
-            <a id='nav-github' className="nav-link" href="https://github.com/BryanSkyyy/Searchle" target="_blank" rel="noreferrer">
-                <FaGithub />
-            </a>
-          </div>
         </div>
       </div>
     </Navbar>

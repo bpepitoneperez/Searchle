@@ -111,7 +111,7 @@ export const getNewStats = (game, minutes, seconds, shareText, stats) => {
       tempBar = overTwoMinutes.bar;
     }
     
-    tempText += "\nhttps://bpepitoneperez.com/Searchle/"
+    tempText += "\nhttps://Searchle.dev"
 
     let percentNum = Math.floor((newWins / newPlayed) * 100);
     let percent = `${percentNum}%`
