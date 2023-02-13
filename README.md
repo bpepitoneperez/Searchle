@@ -1,9 +1,5 @@
 # Searchle React Frontend
 
-Play here: https://bpepitoneperez.github.io/Searchle/
-
-Basically a Wordle x Where's Waldo fusion
-
 ## About
 
 Originally part of the coursework for The Odin Project to make a Where's Waldo website to learn Firebase and practice React, I thought making it a Wordle clone would be more interesting and fun.
