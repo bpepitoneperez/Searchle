@@ -59,7 +59,7 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, char, resultsBar
         return (
           <div className='stats-overlay'>
             <Alert id='copy-alert' variant="success" show={showAlert}>
-              Results copied to clickboard
+              Results copied to clipboard
             </Alert>
             <div className='stats-div'>
               {statasticsTopBar}
