@@ -2,7 +2,7 @@ import React from "react";
 import { MdClose } from "react-icons/md";
 import "../Styles/InfoScreen.css"
 
-const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gameOver, image}) => {
+const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gameOver, image, clearTextHighlight}) => {
 
     const closeInfo = () => {
         setShowInfo(false);
@@ -16,6 +16,8 @@ const InfoScreen = ({showInfo, setShowInfo, char, firstVisit, setFirstVisit, gam
         contextText = 'was'
 
     if (showInfo) {
+        clearTextHighlight()
+
         if (firstVisit)
         {
             return (

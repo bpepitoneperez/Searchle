@@ -125,6 +125,17 @@ const Layout = () => {
     }, 1500);
   };
 
+  const clearTextHighlight = () => {
+    if (window.getSelection)
+    {
+        window.getSelection().removeAllRanges();
+    }
+    else if (document.selection)
+    {
+        document.selection.empty();
+    }
+  }
+
   useEffect(
     () => {let interval;
       if (!gameOver && !showInfo) {
@@ -159,13 +170,13 @@ const Layout = () => {
               setShowInfo={setShowInfo} setFirstVisit={setFirstVisit} image={currentGame.image} />
         </div>
         <div className='content'>
-            <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentGame.character, hit, setHit, miss, setMiss, endGame, gameOver, currentGame.image]} />
+            <Outlet context={[anchorPoint, show, handleClickMenu, setShow, currentGame.character, hit, setHit, miss, setMiss, endGame, gameOver, currentGame.image, clearTextHighlight]} />
         </div>
         <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats}
                   char={currentGame.character} handleShareClick={handleShareClick} resultsBar={resultsBar}
-                  showAlert={showAlert} />
+                  showAlert={showAlert} clearTextHighlight={clearTextHighlight} />
         <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={currentGame.character} firstVisit={firstVisit}
-                  setFirstVisit={setFirstVisit} gameOver={gameOver} image={currentGame.image}/>
+                  setFirstVisit={setFirstVisit} gameOver={gameOver} image={currentGame.image} clearTextHighlight={clearTextHighlight}/>
         <FireworksComponent showFireworks={showFireworks} />
       </div>
     );

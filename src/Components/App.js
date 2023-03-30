@@ -4,13 +4,15 @@ import ClickConfirm from "./ClickConfirm";
 import { useOutletContext } from "react-router-dom";
 
 const App = () => {
-  const [anchorPoint, show, handleClickMenu, setShow, character, hit, setHit, miss, setMiss, endGame, gameOver, image] = useOutletContext();
+  const [anchorPoint, show, handleClickMenu, setShow, character, hit, setHit, miss, setMiss, endGame, gameOver, image, clearTextHighlight] = useOutletContext();
   const [clickSpot, setClickSpot] = useState({ x: 0, y: 0 });
 
   let imgUrl = image.imgUrl
 
   const handleClick = e => {
     e.preventDefault();
+
+    clearTextHighlight();
     
     const x = Math.round(
       (e.nativeEvent.offsetX / e.nativeEvent.target.offsetWidth) * 100

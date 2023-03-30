@@ -6,7 +6,7 @@ import Countdown from 'react-countdown';
 
 import "../Styles/StatsScreen.css"
 
-const StatsScreen = ({gameOver, showStats, setShowStats, stats, char, resultsBar, handleShareClick, showAlert}) => {
+const StatsScreen = ({gameOver, showStats, setShowStats, stats, char, resultsBar, handleShareClick, showAlert, clearTextHighlight}) => {
     const minutes = stats.minutes;
     const seconds = stats.seconds;
     const bestMinutes = stats.bestMinutes;
@@ -56,6 +56,8 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, char, resultsBar
     </div>
 
     if (showStats && gameOver) {
+        clearTextHighlight();
+
         return (
           <div className='stats-overlay'>
             <Alert id='copy-alert' variant="success" show={showAlert}>
