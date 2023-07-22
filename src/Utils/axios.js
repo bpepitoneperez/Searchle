@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === 'production')
 {
     console.log('prod')
     instance = axios.create({
-        baseURL: "https://searchle-api.herokuapp.com/api"
+        baseURL: "https://searchle-api.onrender.com/api"
     });
 }
 else
