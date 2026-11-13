@@ -4,12 +4,18 @@
 
 Originally part of the coursework for The Odin Project to make a Where's Waldo website to learn Firebase and practice React, I thought making it a Wordle clone would be more interesting and fun.
 
-Currently there are 7 images and 108 total characters in those images, with plans to add more in the future.
+The daily rotation contains 106 character placements across 7 images.
 
 ## Frontend
 
 This frontend is built with React (bootstrapped with Create-React-App) and React-Router, with some react-bootstrap and other css for styling.
 
-## Backend
+## Daily puzzles
 
-The frontend pulls the image for the day from a Node.js api backend, which is connected to a MongoDB
+The browser selects the day's image and character from `src/Utils/puzzleCatalog.json`. The puzzle and countdown advance at midnight UTC, including in an open tab. Puzzle numbering continues from the last puzzle recorded by the old API. Player stats stay in local storage.
+
+The catalog order and rotation step determine which puzzle appears on each date. To expand the catalog, introduce the new rotation from a fixed future UTC date so previously published dates keep their assigned puzzles.
+
+## Run and deploy
+
+Run `npm ci` and `npm start` for local development. Run `npm run deploy` to build and publish to the existing `gh-pages` branch for Searchle.dev. The site needs only static hosting.

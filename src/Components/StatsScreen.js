@@ -6,16 +6,11 @@ import Countdown from 'react-countdown';
 
 import "../Styles/StatsScreen.css"
 
-const StatsScreen = ({gameOver, showStats, setShowStats, stats, char, resultsBar, handleShareClick, showAlert, clearTextHighlight}) => {
+const StatsScreen = ({gameOver, showStats, setShowStats, stats, resultsBar, handleShareClick, showAlert, clearTextHighlight, nextGameAt}) => {
     const minutes = stats.minutes;
     const seconds = stats.seconds;
     const bestMinutes = stats.bestMinutes;
     const bestSeconds = stats.bestSeconds;
-    let today = new Date()
-    let tomorrow = new Date(today)
-    tomorrow.setDate(today.getDate() + 1)
-    tomorrow.setHours(0, 0, 0, 0)
-
     const closeStats = () => {
       setShowStats(false);
     }
@@ -71,7 +66,7 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, char, resultsBar
               <div id='stats-bottom-div'>
                 <div id='stats-next-game'>
                   <h1 id='next-game-text'>Next Searchle</h1>
-                  <h1 id='next-game-timer'><Countdown date={tomorrow} daysInHours={true} overtime={true}/></h1>
+                  <h1 id='next-game-timer'><Countdown date={nextGameAt} daysInHours={true}/></h1>
                 </div>
                 <div id='stats-share-div'>
                   <button id='stats-share-button' onClick={handleShareClick}>Share</button>
