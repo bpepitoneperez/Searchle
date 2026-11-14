@@ -12,9 +12,9 @@ This frontend is built with React (bootstrapped with Create-React-App) and React
 
 ## Daily puzzles
 
-The browser selects the day's image and character from `src/Utils/puzzleCatalog.json`. The puzzle and countdown advance at midnight UTC, including in an open tab. Puzzle numbering continues from the last puzzle recorded by the old API. Player stats stay in local storage.
+The browser selects the day's image and character from `src/Utils/puzzleCatalog.json`. The puzzle and countdown advance at midnight Eastern Time (America/New_York), including in an open tab. Puzzle numbering continues from the last puzzle recorded by the old API. Player stats stay in local storage.
 
-The catalog order and rotation step determine which puzzle appears on each date. To expand the catalog, introduce the new rotation from a fixed future UTC date so previously published dates keep their assigned puzzles.
+The catalog order and rotation step determine which puzzle appears on each date. To expand the catalog, introduce the new rotation from a fixed future Eastern date so previously published dates keep their assigned puzzles.
 
 ## Run and deploy
 
