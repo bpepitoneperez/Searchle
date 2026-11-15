@@ -127,15 +127,20 @@ export const getNewStats = (game, minutes, seconds, shareText, stats) => {
       newStreak = 1
     }
 
+    const isNewBest = newPlayed === 1 ||
+      minutes * 60 + seconds < stats.bestMinutes * 60 + stats.bestSeconds;
+
     tempStats = {
       played: newPlayed,
       wins: newWins,
       percent: percent,
       streak: newStreak,
-      bestStreak: newStreak > stats.streak ? newStreak : stats.streak,
-      bestMinutes: minutes < stats.bestMinutes || newPlayed === 1 ? minutes : stats.bestMinutes,
-      bestSeconds: seconds < stats.bestSeconds || newPlayed === 1 ? seconds : stats.bestSeconds,
+      bestStreak: Math.max(newStreak, stats.bestStreak),
+      bestMinutes: isNewBest ? minutes : stats.bestMinutes,
+      bestSeconds: isNewBest ? seconds : stats.bestSeconds,
       lastGamePlayed: game,
+      lastMinutes: minutes,
+      lastSeconds: seconds,
       lastResultsBar: tempBar,
       lastShareText: tempText,
       times: newTimes

@@ -90,7 +90,8 @@ const DailyPuzzle = ({ currentGame }) => {
       setShow(false);
     }
 
-    if(showStats && e.target.id !== 'stats-share-button')
+    // Only dismiss stats when clicking the backdrop, not the panel itself.
+    if (showStats && !e.target.closest('.stats-div'))
       setShowStats(false);
   };
 
@@ -162,7 +163,7 @@ const DailyPuzzle = ({ currentGame }) => {
       </div>
       <StatsScreen gameOver={gameOver} showStats={showStats} setShowStats={setShowStats} stats={stats}
         handleShareClick={handleShareClick} resultsBar={resultsBar} showAlert={showAlert}
-        clearTextHighlight={clearTextHighlight} nextGameAt={currentGame.nextGameAt} />
+        clearTextHighlight={clearTextHighlight} nextGameAt={currentGame.nextGameAt} char={currentGame.character} />
       <InfoScreen showInfo={showInfo} setShowInfo={setShowInfo} char={currentGame.character} firstVisit={firstVisit}
         setFirstVisit={setFirstVisit} gameOver={gameOver} image={currentGame.image} clearTextHighlight={clearTextHighlight} />
       <FireworksComponent showFireworks={showFireworks} />

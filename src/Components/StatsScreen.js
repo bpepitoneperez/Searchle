@@ -6,9 +6,11 @@ import Countdown from 'react-countdown';
 
 import "../Styles/StatsScreen.css"
 
-const StatsScreen = ({gameOver, showStats, setShowStats, stats, resultsBar, handleShareClick, showAlert, clearTextHighlight, nextGameAt}) => {
-    const minutes = stats.minutes;
-    const seconds = stats.seconds;
+const StatsScreen = ({gameOver, showStats, setShowStats, stats, resultsBar, handleShareClick, showAlert, clearTextHighlight, nextGameAt, char}) => {
+    // Older saved stats lack lastMinutes/lastSeconds; recover the time from the share text.
+    const sharedTime = (stats.lastShareText || '').match(/#\d+ - (\d+):(\d+)/);
+    const minutes = stats.lastMinutes ?? (sharedTime ? Number(sharedTime[1]) : undefined);
+    const seconds = stats.lastSeconds ?? (sharedTime ? Number(sharedTime[2]) : undefined);
     const bestMinutes = stats.bestMinutes;
     const bestSeconds = stats.bestSeconds;
     const closeStats = () => {
@@ -43,6 +45,14 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, resultsBar, hand
       </div>
     </div>
 
+    const hasResult = minutes !== undefined && seconds !== undefined;
+    const resultPanel = hasResult && <div id='stats-result' className="stats-page-panel">
+      <p id='stats-result-text'>
+        You found <strong>{char.name}</strong> in{' '}
+        <span id='stats-result-time'>{minutes}:{seconds < 10 ? `0${seconds}` : seconds}</span>
+      </p>
+    </div>
+
     const distributionPanel = <div className="stats-page-panel">
       <h1 className='stats-header'>SCORE DISTRIBUTION</h1>
       <div id='distribution-section' >
@@ -60,8 +70,8 @@ const StatsScreen = ({gameOver, showStats, setShowStats, stats, resultsBar, hand
             </Alert>
             <div className='stats-div'>
               {statasticsTopBar}
+              {resultPanel}
               {statisticsPanel}
-              {/* <div className='stats-timer-div'>You found {char.charName} in {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</div> */}
               {distributionPanel}
               <div id='stats-bottom-div'>
                 <div id='stats-next-game'>
