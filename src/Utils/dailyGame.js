@@ -46,6 +46,9 @@ const rotationEras = [
   // 243 = 3^5. Step 43 repeated an image on consecutive days at this size;
   // 46 is coprime with 243 and passes the daily-image-change test.
   { startsOn: Date.UTC(2026, 10, 27), size: 243, step: 46 },
+  // 53 is the smallest step coprime with 250 that never repeats an image on
+  // consecutive days at this size.
+  { startsOn: Date.UTC(2026, 10, 28), size: 250, step: 53 },
 ].reduce((eras, era) => {
   const previous = eras[eras.length - 1];
   // Pick up where the previous era would have been on this era's first day.

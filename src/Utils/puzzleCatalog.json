@@ -373,5 +373,17 @@
       {"name": "Morolian", "source": "Space Channel 5", "xPos": 41, "yPos": 82, "charUrl": "/chars/morolian.png"},
       {"name": "HUmar", "source": "Phantasy Star Online", "xPos": 77, "yPos": 48, "charUrl": "/chars/pso-humar.png"}
     ]
+  },
+  {
+    "imgUrl": "/imgs/pierre-roussel-gamecube-web-indigo.jpg",
+    "characters": [
+      {"name": "Boo", "source": "Luigi's Mansion", "xPos": 78, "yPos": 43, "charUrl": "/chars/boo.png"},
+      {"name": "Bulborb", "source": "Pikmin", "xPos": 73, "yPos": 60, "charUrl": "/chars/bulborb.png"},
+      {"name": "Red Pikmin", "source": "Pikmin", "xPos": 66, "yPos": 65, "charUrl": "/chars/red-pikmin.png"},
+      {"name": "Paratroopa", "source": "Mario Kart: Double Dash!!", "xPos": 43, "yPos": 47, "charUrl": "/chars/paratroopa.png"},
+      {"name": "Lloyd Irving", "source": "Tales of Symphonia", "xPos": 45, "yPos": 77, "charUrl": "/chars/lloyd-irving.png"},
+      {"name": "Colette Brunel", "source": "Tales of Symphonia", "xPos": 43, "yPos": 76, "charUrl": "/chars/colette-brunel.png"},
+      {"name": "Genis Sage", "source": "Tales of Symphonia", "xPos": 39, "yPos": 76, "charUrl": "/chars/genis-sage.png"}
+    ]
   }
 ]
