@@ -301,5 +301,28 @@
       {"name": "Gum", "source": "Jet Set Radio Future", "xPos": 74, "yPos": 68, "charUrl": "/chars/gum-jsr.png"},
       {"name": "Yo-Yo", "source": "Jet Set Radio Future", "xPos": 73, "yPos": 73, "charUrl": "/chars/yoyo-jsr.png"}
     ]
+  },
+  {
+    "title": "Raid 3: Scourge of the Machines",
+    "author": "Laurie Greasley",
+    "authorUrl": "https://debutart.com/artist/laurie-greasley",
+    "imgUrl": "/imgs/raid-3-scourge-of-the-machines-laurie-greasley.png",
+    "characters": [
+      {"name": "The Iron Giant", "source": "The Iron Giant", "xPos": 90, "yPos": 10, "charUrl": "/chars/iron-giant.png"},
+      {"name": "Hogarth Hughes", "source": "The Iron Giant", "xPos": 82, "yPos": 6, "charUrl": "/chars/hogarth-hughes.png"},
+      {"name": "Dolores Abernathy", "source": "Westworld", "xPos": 37, "yPos": 29, "charUrl": "/chars/dolores-abernathy.png"},
+      {"name": "C-3PO", "source": "Star Wars", "xPos": 39, "yPos": 45, "charUrl": "/chars/c-3po.png"},
+      {"name": "R2-D2", "source": "Star Wars", "xPos": 26, "yPos": 47, "charUrl": "/chars/r2-d2.png"},
+      {"name": "Sarah Connor", "source": "Terminator 2: Judgment Day", "xPos": 24, "yPos": 51, "charUrl": "/chars/sarah-connor.png"},
+      {"name": "The Gunslinger", "source": "Westworld (1973)", "xPos": 84, "yPos": 42, "charUrl": "/chars/westworld-gunslinger.png"},
+      {"name": "ED-209", "source": "RoboCop", "xPos": 78, "yPos": 51, "charUrl": "/chars/ed-209.png"},
+      {"name": "RoboCop", "source": "RoboCop", "xPos": 45, "yPos": 55, "charUrl": "/chars/robocop.png"},
+      {"name": "T-800", "source": "Terminator 2: Judgment Day", "xPos": 40, "yPos": 59, "charUrl": "/chars/t-800.png"},
+      {"name": "Neo", "source": "The Matrix", "xPos": 52, "yPos": 61, "charUrl": "/chars/neo.png"},
+      {"name": "Data", "source": "Star Trek: The Next Generation", "xPos": 77, "yPos": 67, "charUrl": "/chars/data-star-trek.png"},
+      {"name": "Robby the Robot", "source": "Forbidden Planet", "xPos": 50, "yPos": 88, "charUrl": "/chars/robby-the-robot.png"},
+      {"name": "Morpheus", "source": "The Matrix", "xPos": 70, "yPos": 84, "charUrl": "/chars/morpheus.png"},
+      {"name": "Trinity", "source": "The Matrix", "xPos": 68, "yPos": 90, "charUrl": "/chars/trinity.png"}
+    ]
   }
 ]
