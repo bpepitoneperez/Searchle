@@ -25,6 +25,8 @@ const rotationEras = [
   { startsOn: Date.UTC(2026, 10, 19), size: 160, step: 43 },
   // 173 is prime; the largest image has 42 characters and 173 - 43 = 130.
   { startsOn: Date.UTC(2026, 10, 20), size: 173, step: 43 },
+  // 191 is prime; the largest image has 42 characters and 191 - 43 = 148.
+  { startsOn: Date.UTC(2026, 10, 21), size: 191, step: 43 },
 ].reduce((eras, era) => {
   const previous = eras[eras.length - 1];
   // Pick up where the previous era would have been on this era's first day.

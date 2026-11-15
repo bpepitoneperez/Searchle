@@ -257,7 +257,33 @@
       {"name": "Cole MacGrath", "source": "inFamous", "xPos": 78, "yPos": 72, "charUrl": "/chars/cole-macgrath.png"},
       {"name": "The Traveler", "source": "Journey", "xPos": 28, "yPos": 70, "charUrl": "/chars/journey-traveler.png"},
       {"name": "Lightning", "source": "Final Fantasy XIII", "xPos": 63, "yPos": 78, "charUrl": "/chars/lightning-ffxiii.png"},
-      {"name": "Vanille", "source": "Final Fantasy XIII", "xPos": 59, "yPos": 79, "charUrl": "/chars/vanille.png"}
+      {"name": "Vanille", "source": "Final Fantasy XIII", "xPos": 59, "yPos": 79, "charUrl": "/chars/vanille.png"},
+      {"name": "Sorceress", "source": "Dragon's Crown", "xPos": 33, "yPos": 62, "charUrl": "/chars/sorceress-dragons-crown.png"}
+    ]
+  },
+  {
+    "title": "Wii Explosion",
+    "author": "Pierre Roussel",
+    "authorUrl": "https://www.etsy.com/shop/Angerinet",
+    "imgUrl": "/imgs/pierre-roussel-wii-web.jpg",
+    "characters": [
+      {"name": "Wii Fit Trainer", "source": "Wii Fit", "xPos": 18, "yPos": 26, "charUrl": "/chars/wii-fit-trainer.png"},
+      {"name": "Midna & Wolf Link", "source": "The Legend of Zelda: Twilight Princess", "xPos": 38, "yPos": 35, "charUrl": "/chars/midna-and-wolf-link.png"},
+      {"name": "Rabbid", "source": "Rayman Raving Rabbids", "xPos": 54, "yPos": 41, "charUrl": "/chars/rabbid.png"},
+      {"name": "Mario", "source": "Super Mario Galaxy", "xPos": 89, "yPos": 40, "charUrl": "/chars/mario.png"},
+      {"name": "Kirby", "source": "Kirby's Epic Yarn", "xPos": 15, "yPos": 47, "charUrl": "/chars/yarn-kirby.png"},
+      {"name": "Bear Hugger", "source": "Punch-Out!!", "xPos": 20, "yPos": 54, "charUrl": "/chars/bear-hugger.png"},
+      {"name": "Little Mac", "source": "Punch-Out!!", "xPos": 24, "yPos": 55, "charUrl": "/chars/little-mac.png"},
+      {"name": "Soren", "source": "Fire Emblem: Radiant Dawn", "xPos": 51, "yPos": 48, "charUrl": "/chars/soren.png"},
+      {"name": "Ike", "source": "Fire Emblem: Radiant Dawn", "xPos": 61, "yPos": 49, "charUrl": "/chars/ike.png"},
+      {"name": "Samus", "source": "Metroid Prime 3: Corruption", "xPos": 72, "yPos": 46, "charUrl": "/chars/samus.png"},
+      {"name": "Diddy Kong", "source": "Donkey Kong Country Returns", "xPos": 47, "yPos": 64, "charUrl": "/chars/diddy-kong.png"},
+      {"name": "Donkey Kong", "source": "Donkey Kong Country Returns", "xPos": 65, "yPos": 65, "charUrl": "/chars/donkey-kong-mk64.png"},
+      {"name": "Luigi", "source": "Mario Strikers Charged", "xPos": 66, "yPos": 59, "charUrl": "/chars/luigi.png"},
+      {"name": "Waluigi", "source": "Mario Strikers Charged", "xPos": 73, "yPos": 58, "charUrl": "/chars/waluigi.png"},
+      {"name": "Bowser", "source": "Mario Kart Wii", "xPos": 25, "yPos": 66, "charUrl": "/chars/bowser.png"},
+      {"name": "Toad", "source": "Mario Kart Wii", "xPos": 34, "yPos": 68, "charUrl": "/chars/toad.png"},
+      {"name": "Travis Touchdown", "source": "No More Heroes", "xPos": 50, "yPos": 75, "charUrl": "/chars/travis-touchdown.png"}
     ]
   }
 ]
