@@ -29,16 +29,32 @@ test('the rollover stays at Eastern midnight across daylight saving changes', ()
     .toBe(Date.parse('2027-03-15T00:00:00-04:00'));
 });
 
+test('expanding the catalog keeps the puzzles of dates before the new era', () => {
+  const served = {
+    '2026-11-10': ['Xbox 360 Explosion', 'Big Daddy'],
+    '2026-11-12': ['A.D. 2.222 Cyberpunk City', 'No-Face'],
+    '2026-11-15': ['Playstation 4 Explosion', '2B'],
+    '2026-11-16': ['Water Pokemon', 'Mudkip'],
+  };
+  for (const [date, [title, name]] of Object.entries(served)) {
+    const { image, character } = getDailyGame(Date.parse(`${date}T12:00:00-05:00`));
+    expect([image.title, character.name]).toEqual([title, name]);
+  }
+});
+
 test('the rotation serves every placement with valid assets and changes image every day', () => {
-  const start = Date.UTC(2026, 10, 13);
+  // Start the day before the current era so the changeover day is checked too.
+  const start = Date.parse('2026-11-16T12:00:00-05:00');
   const placementCount = catalog.reduce((sum, image) => sum + image.characters.length, 0);
-  const rotation = Array.from({ length: placementCount + 1 }, (_, day) =>
+  const rotation = Array.from({ length: placementCount + 2 }, (_, day) =>
     getDailyGame(start + day * 24 * 60 * 60 * 1000)
   );
 
   const uniquePlacements = new Set();
-  rotation.slice(0, -1).forEach(({ image, character }, index) => {
+  rotation.slice(0, -1).forEach(({ image }, index) => {
     expect(image.imgUrl).not.toBe(rotation[index + 1].image.imgUrl);
+  });
+  rotation.slice(1, -1).forEach(({ image, character }) => {
     uniquePlacements.add(JSON.stringify([image.imgUrl, character]));
     for (const asset of [image.imgUrl, character.charUrl]) {
       expect(existsSync(resolve(__dirname, '../Assets', '.' + asset))).toBe(true);

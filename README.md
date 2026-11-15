@@ -4,7 +4,7 @@
 
 Originally part of the coursework for The Odin Project to make a Where's Waldo website to learn Firebase and practice React, I thought making it a Wordle clone would be more interesting and fun.
 
-The daily rotation contains 106 character placements across 7 images.
+The daily rotation contains 126 character placements across 8 images.
 
 ## Frontend
 

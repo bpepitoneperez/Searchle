@@ -158,7 +158,35 @@
       {"name": "No-Face", "source": "Spirited Away", "xPos": 96, "yPos": 41, "charUrl": "/chars/no-face.png"},
       {"name": "Patrick Star", "source": "SpongeBob SquarePants", "xPos": 66, "yPos": 49, "charUrl": "/chars/patrick.png"},
       {"name": "Predator", "source": "Predator", "xPos": 95, "yPos": 25, "charUrl": "/chars/predator.png"},
-      {"name": "Ultramarine", "source": "Warhammer 40k", "xPos": 54, "yPos": 49, "charUrl": "/chars/ultramarine.png"}
+      {"name": "Ultramarine", "source": "Warhammer 40k", "xPos": 54, "yPos": 49, "charUrl": "/chars/ultramarine.png"},
+      {"name": "Finn the Human", "source": "Adventure Time", "xPos": 67, "yPos": 73, "charUrl": "/chars/finn-the-human.png"}
+    ]
+  },
+  {
+    "title": "N64 Explosion",
+    "author": "Pierre Roussel",
+    "authorUrl": "https://www.etsy.com/shop/Angerinet",
+    "imgUrl": "/imgs/pierre-roussel-n64-web.jpg",
+    "characters": [
+      {"name": "Fox McCloud", "source": "Star Fox 64", "xPos": 15, "yPos": 39, "charUrl": "/chars/fox-star-fox.png"},
+      {"name": "Navi", "source": "The Legend of Zelda: Ocarina of Time", "xPos": 25, "yPos": 42, "charUrl": "/chars/navi-oot.png"},
+      {"name": "Link", "source": "The Legend of Zelda: Ocarina of Time", "xPos": 32, "yPos": 43, "charUrl": "/chars/link.png"},
+      {"name": "Lakitu", "source": "Mario Kart 64", "xPos": 80, "yPos": 42, "charUrl": "/chars/lakitu.png"},
+      {"name": "Goemon", "source": "Mystical Ninja Starring Goemon", "xPos": 68, "yPos": 44, "charUrl": "/chars/goemon.png"},
+      {"name": "Luigi", "source": "Mario Kart 64", "xPos": 72, "yPos": 47, "charUrl": "/chars/luigi.png"},
+      {"name": "Donkey Kong", "source": "Mario Kart 64", "xPos": 73, "yPos": 50, "charUrl": "/chars/donkey-kong-mk64.png"},
+      {"name": "The Great Mighty Poo", "source": "Conker's Bad Fur Day", "xPos": 32, "yPos": 57, "charUrl": "/chars/great-mighty-poo.png"},
+      {"name": "Vela", "source": "Jet Force Gemini", "xPos": 22, "yPos": 57, "charUrl": "/chars/vela-jfg.png"},
+      {"name": "Juno", "source": "Jet Force Gemini", "xPos": 28, "yPos": 58, "charUrl": "/chars/juno-jfg.png"},
+      {"name": "Conker", "source": "Conker's Bad Fur Day", "xPos": 39, "yPos": 59, "charUrl": "/chars/conker.png"},
+      {"name": "Skull Kid", "source": "The Legend of Zelda: Majora's Mask", "xPos": 48, "yPos": 59, "charUrl": "/chars/skull-kid.png"},
+      {"name": "Lupus", "source": "Jet Force Gemini", "xPos": 28, "yPos": 61, "charUrl": "/chars/lupus-jfg.png"},
+      {"name": "Chain Chomp", "source": "Super Mario 64", "xPos": 68, "yPos": 60, "charUrl": "/chars/chain-chomp.png"},
+      {"name": "Mario", "source": "Super Mario 64", "xPos": 64, "yPos": 63, "charUrl": "/chars/mario.png"},
+      {"name": "Banjo & Kazooie", "source": "Banjo-Kazooie", "xPos": 79, "yPos": 63, "charUrl": "/chars/banjo-kazooie.png"},
+      {"name": "Kirby", "source": "Kirby 64: The Crystal Shards", "xPos": 84, "yPos": 69, "charUrl": "/chars/kirby.png"},
+      {"name": "Captain Falcon", "source": "F-Zero X", "xPos": 73, "yPos": 73, "charUrl": "/chars/captain-falcon.png"},
+      {"name": "Brian", "source": "Quest 64", "xPos": 59, "yPos": 78, "charUrl": "/chars/brian-quest64.png"}
     ]
   }
 ]

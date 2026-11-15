@@ -8,9 +8,28 @@ const puzzles = catalog.flatMap(({ characters, ...image }) =>
   characters.map(character => ({ image, character }))
 );
 
-// 43 and 106 are coprime, so every pair appears once before the rotation repeats.
-// Both a forward and a wraparound step clear the largest group of 41 characters.
-const rotationStep = 43;
+// New placements are appended to the end of the catalog and switched on by
+// adding an era that starts on a future Eastern date, so dates that have
+// already been served keep their puzzles. Each era uses the first `size`
+// placements. Its step must be coprime with `size` so every placement appears
+// once per cycle, and both `step` and `size - step` must be at least the
+// largest image's character count so the image changes every day.
+const rotationEras = [
+  // 43 and 106 are coprime; the largest image then had 41 characters.
+  { startsOn: lastLegacyGameDate, size: 106, step: 43 },
+  // 43 and 126 are coprime; the largest image has 42 characters and 126 - 43 = 83.
+  { startsOn: Date.UTC(2026, 10, 17), size: 126, step: 43 },
+].reduce((eras, era) => {
+  const previous = eras[eras.length - 1];
+  // Pick up where the previous era would have been on this era's first day.
+  const firstIndex = previous ? eraIndex(previous, era.startsOn / DAY_MS) : 0;
+  return [...eras, { ...era, firstIndex }];
+}, []);
+
+function eraIndex({ startsOn, size, step, firstIndex = 0 }, easternDay) {
+  const days = easternDay - startsOn / DAY_MS;
+  return (((firstIndex + days * step) % size) + size) % size;
+}
 
 const easternClock = new Intl.DateTimeFormat('en-US', {
   timeZone: 'America/New_York',
@@ -43,8 +62,9 @@ export function getDailyGame(now = Date.now()) {
   // so read it again close to the rollover.
   const nextMidnight = (easternDay + 1) * DAY_MS;
   const nextGameAt = nextMidnight - easternOffset(nextMidnight - offset);
-  const rotationOffset = (daysSinceLastLegacyGame * rotationStep) % puzzles.length;
-  const puzzleIndex = (rotationOffset + puzzles.length) % puzzles.length;
+  const era = rotationEras.filter(({ startsOn }) => startsOn / DAY_MS <= easternDay).pop()
+    || rotationEras[0];
+  const puzzleIndex = eraIndex(era, easternDay);
 
   return {
     ...puzzles[puzzleIndex],
