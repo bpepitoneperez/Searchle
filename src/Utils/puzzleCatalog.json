@@ -215,5 +215,28 @@
       {"name": "PaRappa", "source": "PaRappa the Rapper", "xPos": 38, "yPos": 75, "charUrl": "/chars/parappa.png"},
       {"name": "Chop Chop Master Onion", "source": "PaRappa the Rapper", "xPos": 34, "yPos": 74, "charUrl": "/chars/chop-chop-master-onion.png"}
     ]
+  },
+  {
+    "title": "Playstation 2 Explosion",
+    "author": "Pierre Roussel",
+    "authorUrl": "https://www.etsy.com/shop/Angerinet",
+    "imgUrl": "/imgs/pierre-roussel-ps2-web.jpg",
+    "characters": [
+      {"name": "The Prince", "source": "Katamari Damacy", "xPos": 28, "yPos": 32, "charUrl": "/chars/the-prince-katamari.png"},
+      {"name": "Yuna", "source": "Final Fantasy X", "xPos": 23, "yPos": 42, "charUrl": "/chars/yuna-ffx.png"},
+      {"name": "Raiden", "source": "Metal Gear Solid 2", "xPos": 49, "yPos": 40, "charUrl": "/chars/raiden-mgs2.png"},
+      {"name": "Jak & Daxter", "source": "Jak and Daxter: The Precursor Legacy", "xPos": 88, "yPos": 48, "charUrl": "/chars/jak-and-daxter.png"},
+      {"name": "Kratos", "source": "God of War", "xPos": 24, "yPos": 53, "charUrl": "/chars/kratos-gow1.png"},
+      {"name": "Amaterasu", "source": "Ōkami", "xPos": 36, "yPos": 54, "charUrl": "/chars/amaterasu.png"},
+      {"name": "Tommy Vercetti", "source": "Grand Theft Auto: Vice City", "xPos": 67, "yPos": 53, "charUrl": "/chars/tommy-vercetti.png"},
+      {"name": "Ratchet", "source": "Ratchet & Clank", "xPos": 47, "yPos": 63, "charUrl": "/chars/ratchet.png"},
+      {"name": "Laharl", "source": "Disgaea: Hour of Darkness", "xPos": 69, "yPos": 62, "charUrl": "/chars/laharl.png"},
+      {"name": "Etna", "source": "Disgaea: Hour of Darkness", "xPos": 69, "yPos": 65, "charUrl": "/chars/etna.png"},
+      {"name": "Dante", "source": "Devil May Cry", "xPos": 30, "yPos": 65, "charUrl": "/chars/dante-dmc3.png"},
+      {"name": "Bubble Head Nurse", "source": "Silent Hill 2", "xPos": 26, "yPos": 71, "charUrl": "/chars/bubble-head-nurse.png"},
+      {"name": "James Sunderland", "source": "Silent Hill 2", "xPos": 33, "yPos": 73, "charUrl": "/chars/james-sunderland.png"},
+      {"name": "Toan", "source": "Dark Cloud", "xPos": 40, "yPos": 69, "charUrl": "/chars/toan-dark-cloud.png"},
+      {"name": "Fran", "source": "Final Fantasy XII", "xPos": 82, "yPos": 66, "charUrl": "/chars/fran-ffxii.png"}
+    ]
   }
 ]
