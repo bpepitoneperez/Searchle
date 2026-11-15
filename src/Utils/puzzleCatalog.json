@@ -385,5 +385,28 @@
       {"name": "Colette Brunel", "source": "Tales of Symphonia", "xPos": 43, "yPos": 76, "charUrl": "/chars/colette-brunel.png"},
       {"name": "Genis Sage", "source": "Tales of Symphonia", "xPos": 39, "yPos": 76, "charUrl": "/chars/genis-sage.png"}
     ]
+  },
+  {
+    "imgUrl": "/imgs/water-pokemon.jpg",
+    "characters": [
+      {"name": "Staryu", "source": "Pokemon", "xPos": 23, "yPos": 30, "charUrl": "/chars/staryu.png"},
+      {"name": "Chinchou", "source": "Pokemon", "xPos": 57, "yPos": 40, "charUrl": "/chars/chinchou.png"},
+      {"name": "Luvdisc", "source": "Pokemon", "xPos": 16, "yPos": 22, "charUrl": "/chars/luvdisc.png"},
+      {"name": "Buizel", "source": "Pokemon", "xPos": 80, "yPos": 40, "charUrl": "/chars/buizel.png"},
+      {"name": "Marill", "source": "Pokemon", "xPos": 64, "yPos": 63, "charUrl": "/chars/marill.png"},
+      {"name": "Psyduck", "source": "Pokemon", "xPos": 43, "yPos": 77, "charUrl": "/chars/psyduck.png"},
+      {"name": "Wartortle", "source": "Pokemon", "xPos": 9, "yPos": 79, "charUrl": "/chars/wartortle.png"},
+      {"name": "Goldeen", "source": "Pokemon", "xPos": 46, "yPos": 84, "charUrl": "/chars/goldeen.png"},
+      {"name": "Omanyte", "source": "Pokemon", "xPos": 21, "yPos": 93, "charUrl": "/chars/omanyte.png"},
+      {"name": "Octillery", "source": "Pokemon", "xPos": 42, "yPos": 96, "charUrl": "/chars/octillery.png"},
+      {"name": "Poliwag", "source": "Pokemon", "xPos": 95, "yPos": 96, "charUrl": "/chars/poliwag.png"},
+      {"name": "Shellder", "source": "Pokemon", "xPos": 55, "yPos": 91, "charUrl": "/chars/shellder.png"},
+      {"name": "Clamperl", "source": "Pokemon", "xPos": 13, "yPos": 90, "charUrl": "/chars/clamperl.png"},
+      {"name": "Sharpedo", "source": "Pokemon", "xPos": 43, "yPos": 64, "charUrl": "/chars/sharpedo.png"},
+      {"name": "Lapras", "source": "Pokemon", "xPos": 23, "yPos": 69, "charUrl": "/chars/lapras.png"},
+      {"name": "Kingdra", "source": "Pokemon", "xPos": 8, "yPos": 59, "charUrl": "/chars/kingdra.png"},
+      {"name": "Seadra", "source": "Pokemon", "xPos": 81, "yPos": 78, "charUrl": "/chars/seadra.png"},
+      {"name": "Relicanth", "source": "Pokemon", "xPos": 52, "yPos": 45, "charUrl": "/chars/relicanth.png"}
+    ]
   }
 ]

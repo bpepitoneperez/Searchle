@@ -49,6 +49,9 @@ const rotationEras = [
   // 53 is the smallest step coprime with 250 that never repeats an image on
   // consecutive days at this size.
   { startsOn: Date.UTC(2026, 10, 28), size: 250, step: 53 },
+  // 83 is the smallest step coprime with 268 that never repeats an image on
+  // consecutive days at this size.
+  { startsOn: Date.UTC(2026, 10, 29), size: 268, step: 83 },
 ].reduce((eras, era) => {
   const previous = eras[eras.length - 1];
   // Pick up where the previous era would have been on this era's first day.
