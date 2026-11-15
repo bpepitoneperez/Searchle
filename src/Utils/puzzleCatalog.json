@@ -238,5 +238,26 @@
       {"name": "Toan", "source": "Dark Cloud", "xPos": 40, "yPos": 69, "charUrl": "/chars/toan-dark-cloud.png"},
       {"name": "Fran", "source": "Final Fantasy XII", "xPos": 82, "yPos": 66, "charUrl": "/chars/fran-ffxii.png"}
     ]
+  },
+  {
+    "title": "Playstation 3 Explosion",
+    "author": "Pierre Roussel",
+    "authorUrl": "https://www.etsy.com/shop/Angerinet",
+    "imgUrl": "/imgs/pierre-roussel-ps3-web.jpg",
+    "characters": [
+      {"name": "Fat Princess", "source": "Fat Princess", "xPos": 24, "yPos": 36, "charUrl": "/chars/fat-princess.png"},
+      {"name": "Vanguard", "source": "Demon's Souls", "xPos": 21, "yPos": 43, "charUrl": "/chars/vanguard-demons-souls.png"},
+      {"name": "Sackboy", "source": "LittleBigPlanet", "xPos": 57, "yPos": 47, "charUrl": "/chars/sackboy.png"},
+      {"name": "Old Snake", "source": "Metal Gear Solid 4", "xPos": 81, "yPos": 52, "charUrl": "/chars/old-snake.png"},
+      {"name": "Nathan Drake", "source": "Uncharted 2: Among Thieves", "xPos": 58, "yPos": 58, "charUrl": "/chars/nathan-drake.png"},
+      {"name": "Altaïr", "source": "Assassin's Creed", "xPos": 89, "yPos": 60, "charUrl": "/chars/altair.png"},
+      {"name": "Kratos", "source": "God of War III", "xPos": 57, "yPos": 67, "charUrl": "/chars/kratos-gow1.png"},
+      {"name": "Joel", "source": "The Last of Us", "xPos": 79, "yPos": 63, "charUrl": "/chars/joel.png"},
+      {"name": "Ellie", "source": "The Last of Us", "xPos": 83, "yPos": 63, "charUrl": "/chars/ellie.png"},
+      {"name": "Cole MacGrath", "source": "inFamous", "xPos": 78, "yPos": 72, "charUrl": "/chars/cole-macgrath.png"},
+      {"name": "The Traveler", "source": "Journey", "xPos": 28, "yPos": 70, "charUrl": "/chars/journey-traveler.png"},
+      {"name": "Lightning", "source": "Final Fantasy XIII", "xPos": 63, "yPos": 78, "charUrl": "/chars/lightning-ffxiii.png"},
+      {"name": "Vanille", "source": "Final Fantasy XIII", "xPos": 59, "yPos": 79, "charUrl": "/chars/vanille.png"}
+    ]
   }
 ]
