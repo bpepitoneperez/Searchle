@@ -364,5 +364,14 @@
       {"name": "Garrus Vakarian", "source": "Mass Effect", "xPos": 10, "yPos": 46, "charUrl": "/chars/garrus.png"},
       {"name": "Horstachio", "source": "Viva Piñata", "xPos": 26, "yPos": 57, "charUrl": "/chars/horstachio.png"}
     ]
+  },
+  {
+    "imgUrl": "/imgs/pierre-roussel-dreamcast-web.jpg",
+    "characters": [
+      {"name": "Axel", "source": "Crazy Taxi", "xPos": 26, "yPos": 53, "charUrl": "/chars/axel-crazy-taxi.png"},
+      {"name": "Aika", "source": "Skies of Arcadia", "xPos": 87, "yPos": 72, "charUrl": "/chars/aika.png"},
+      {"name": "Morolian", "source": "Space Channel 5", "xPos": 41, "yPos": 82, "charUrl": "/chars/morolian.png"},
+      {"name": "HUmar", "source": "Phantasy Star Online", "xPos": 77, "yPos": 48, "charUrl": "/chars/pso-humar.png"}
+    ]
   }
 ]
