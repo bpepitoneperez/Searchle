@@ -324,5 +324,21 @@
       {"name": "Morpheus", "source": "The Matrix", "xPos": 70, "yPos": 84, "charUrl": "/chars/morpheus.png"},
       {"name": "Trinity", "source": "The Matrix", "xPos": 68, "yPos": 90, "charUrl": "/chars/trinity.png"}
     ]
+  },
+  {
+    "imgUrl": "/imgs/222-cyberpunk-city.jpg",
+    "characters": [
+      {"name": "Neo", "source": "The Matrix", "xPos": 40, "yPos": 10, "charUrl": "/chars/neo.png"},
+      {"name": "Catbus", "source": "My Neighbor Totoro", "xPos": 14, "yPos": 49, "charUrl": "/chars/catbus.png"},
+      {"name": "Minion", "source": "Despicable Me", "xPos": 95, "yPos": 45, "charUrl": "/chars/minion.png"},
+      {"name": "Kumamon", "source": "Kumamoto mascot", "xPos": 63, "yPos": 79, "charUrl": "/chars/kumamon.png"},
+      {"name": "Evangelion Unit-01", "source": "Neon Genesis Evangelion", "xPos": 93, "yPos": 71, "charUrl": "/chars/evangelion-unit-01.png"},
+      {"name": "Dr. Zoidberg", "source": "Futurama", "xPos": 84, "yPos": 69, "charUrl": "/chars/zoidberg.png"},
+      {"name": "Lupin III", "source": "Lupin the Third", "xPos": 54, "yPos": 13, "charUrl": "/chars/lupin-iii.png"},
+      {"name": "Greymon", "source": "Digimon Adventure", "xPos": 4, "yPos": 39, "charUrl": "/chars/greymon.png"},
+      {"name": "Rainbow Dash", "source": "My Little Pony: Friendship Is Magic", "xPos": 58, "yPos": 38, "charUrl": "/chars/rainbow-dash.png"},
+      {"name": "Mars Attacks Martian", "source": "Mars Attacks!", "xPos": 49, "yPos": 48, "charUrl": "/chars/mars-attacks-martian.png"},
+      {"name": "Colossal Titan", "source": "Attack on Titan", "xPos": 45, "yPos": 76, "charUrl": "/chars/colossal-titan.png"}
+    ]
   }
 ]

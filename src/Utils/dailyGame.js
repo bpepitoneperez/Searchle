@@ -4,9 +4,14 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 const lastLegacyGameDate = Date.UTC(2026, 8, 9);
 const lastLegacyGameNumber = 1332;
 
-const puzzles = catalog.flatMap(({ characters, ...image }) =>
-  characters.map(character => ({ image, character }))
-);
+// An entry with only `imgUrl` and `characters` adds placements to an image
+// listed earlier, so new characters can go at the end of the catalog without
+// shifting the placements that existing eras already serve.
+const images = {};
+const puzzles = catalog.flatMap(({ characters, ...entry }) => {
+  const image = images[entry.imgUrl] || (images[entry.imgUrl] = entry);
+  return characters.map(character => ({ image, character }));
+});
 
 // New placements are appended to the end of the catalog and switched on by
 // adding an era that starts on a future Eastern date, so dates that have
@@ -31,6 +36,9 @@ const rotationEras = [
   { startsOn: Date.UTC(2026, 10, 22), size: 199, step: 43 },
   // 43 and 214 are coprime; the largest image has 42 characters and 214 - 43 = 171.
   { startsOn: Date.UTC(2026, 10, 23), size: 214, step: 43 },
+  // 43 and 225 are coprime. Cyberpunk City's placements are now split in two
+  // blocks, so the daily-image-change test is what confirms this step.
+  { startsOn: Date.UTC(2026, 10, 24), size: 225, step: 43 },
 ].reduce((eras, era) => {
   const previous = eras[eras.length - 1];
   // Pick up where the previous era would have been on this era's first day.
