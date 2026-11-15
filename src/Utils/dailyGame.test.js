@@ -42,6 +42,7 @@ test('expanding the catalog keeps the puzzles of dates before the new era', () =
     '2026-11-21': ['Playstation 2 Explosion', 'Tommy Vercetti'],
     '2026-11-22': ['Dreamcast Explosion', 'Seaman'],
     '2026-11-23': ['Meme Supreme', 'Mermaid Man'],
+    '2026-11-24': ['A.D. 2.222 Cyberpunk City', 'Kang'],
   };
   for (const [date, [title, name]] of Object.entries(served)) {
     const { image, character } = getDailyGame(Date.parse(`${date}T12:00:00-05:00`));
@@ -51,7 +52,7 @@ test('expanding the catalog keeps the puzzles of dates before the new era', () =
 
 test('the rotation serves every placement with valid assets and changes image every day', () => {
   // Start the day before the current era so the changeover day is checked too.
-  const start = Date.parse('2026-11-23T12:00:00-05:00');
+  const start = Date.parse('2026-11-24T12:00:00-05:00');
   const placementCount = catalog.reduce((sum, image) => sum + image.characters.length, 0);
   const rotation = Array.from({ length: placementCount + 2 }, (_, day) =>
     getDailyGame(start + day * 24 * 60 * 60 * 1000)

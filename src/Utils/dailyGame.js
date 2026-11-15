@@ -39,6 +39,8 @@ const rotationEras = [
   // 43 and 225 are coprime. Cyberpunk City's placements are now split in two
   // blocks, so the daily-image-change test is what confirms this step.
   { startsOn: Date.UTC(2026, 10, 24), size: 225, step: 43 },
+  // 43 and 232 are coprime; the daily-image-change test confirms the step.
+  { startsOn: Date.UTC(2026, 10, 25), size: 232, step: 43 },
 ].reduce((eras, era) => {
   const previous = eras[eras.length - 1];
   // Pick up where the previous era would have been on this era's first day.

@@ -340,5 +340,17 @@
       {"name": "Mars Attacks Martian", "source": "Mars Attacks!", "xPos": 49, "yPos": 48, "charUrl": "/chars/mars-attacks-martian.png"},
       {"name": "Colossal Titan", "source": "Attack on Titan", "xPos": 45, "yPos": 76, "charUrl": "/chars/colossal-titan.png"}
     ]
+  },
+  {
+    "imgUrl": "/imgs/pierre-roussel-ps4-web.jpg",
+    "characters": [
+      {"name": "Arthur Morgan", "source": "Red Dead Redemption 2", "xPos": 26, "yPos": 29, "charUrl": "/chars/arthur-morgan.png"},
+      {"name": "Gladiolus", "source": "Final Fantasy XV", "xPos": 26, "yPos": 35, "charUrl": "/chars/gladiolus.png"},
+      {"name": "Prompto", "source": "Final Fantasy XV", "xPos": 26, "yPos": 39, "charUrl": "/chars/prompto.png"},
+      {"name": "Ignis", "source": "Final Fantasy XV", "xPos": 30, "yPos": 41, "charUrl": "/chars/ignis.png"},
+      {"name": "Cloud Strife", "source": "Final Fantasy VII Remake", "xPos": 69, "yPos": 35, "charUrl": "/chars/cloud-ff7-remake.png"},
+      {"name": "Atreus", "source": "God of War", "xPos": 65, "yPos": 58, "charUrl": "/chars/atreus.png"},
+      {"name": "Ryu", "source": "Street Fighter V", "xPos": 48, "yPos": 76, "charUrl": "/chars/ryu-street-fighter.png"}
+    ]
   }
 ]
