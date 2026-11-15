@@ -19,6 +19,8 @@ const rotationEras = [
   { startsOn: lastLegacyGameDate, size: 106, step: 43 },
   // 43 and 126 are coprime; the largest image has 42 characters and 126 - 43 = 83.
   { startsOn: Date.UTC(2026, 10, 17), size: 126, step: 43 },
+  // 43 and 145 are coprime; the largest image has 42 characters and 145 - 43 = 102.
+  { startsOn: Date.UTC(2026, 10, 18), size: 145, step: 43 },
 ].reduce((eras, era) => {
   const previous = eras[eras.length - 1];
   // Pick up where the previous era would have been on this era's first day.

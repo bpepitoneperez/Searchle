@@ -188,5 +188,32 @@
       {"name": "Captain Falcon", "source": "F-Zero X", "xPos": 73, "yPos": 73, "charUrl": "/chars/captain-falcon.png"},
       {"name": "Brian", "source": "Quest 64", "xPos": 59, "yPos": 78, "charUrl": "/chars/brian-quest64.png"}
     ]
+  },
+  {
+    "title": "Playstation Explosion",
+    "author": "Pierre Roussel",
+    "authorUrl": "https://www.etsy.com/shop/Angerinet",
+    "imgUrl": "/imgs/pierre-roussel-ps1-web.jpg",
+    "characters": [
+      {"name": "Spyro", "source": "Spyro the Dragon", "xPos": 15, "yPos": 37, "charUrl": "/chars/spyro.png"},
+      {"name": "Sweet Tooth", "source": "Twisted Metal", "xPos": 35, "yPos": 40, "charUrl": "/chars/sweet-tooth.png"},
+      {"name": "Cloud Strife", "source": "Final Fantasy VII", "xPos": 17, "yPos": 48, "charUrl": "/chars/cloud-strife.png"},
+      {"name": "Guard Scorpion", "source": "Final Fantasy VII", "xPos": 25, "yPos": 47, "charUrl": "/chars/guard-scorpion.png"},
+      {"name": "Barret Wallace", "source": "Final Fantasy VII", "xPos": 18, "yPos": 52, "charUrl": "/chars/barret-wallace.png"},
+      {"name": "Lara Croft", "source": "Tomb Raider", "xPos": 33, "yPos": 52, "charUrl": "/chars/lara-croft.png"},
+      {"name": "Leon S. Kennedy", "source": "Resident Evil 2", "xPos": 65, "yPos": 52, "charUrl": "/chars/leon-kennedy-re2.png"},
+      {"name": "Solid Snake", "source": "Metal Gear Solid", "xPos": 74, "yPos": 47, "charUrl": "/chars/solid-snake.png"},
+      {"name": "Vivi Ornitier", "source": "Final Fantasy IX", "xPos": 45, "yPos": 54, "charUrl": "/chars/vivi-ornitier.png"},
+      {"name": "Rikimaru", "source": "Tenchu: Stealth Assassins", "xPos": 20, "yPos": 60, "charUrl": "/chars/rikimaru.png"},
+      {"name": "Chocobo", "source": "Final Fantasy", "xPos": 29, "yPos": 62, "charUrl": "/chars/chocobo.png"},
+      {"name": "Zidane Tribal", "source": "Final Fantasy IX", "xPos": 43, "yPos": 67, "charUrl": "/chars/zidane-tribal.png"},
+      {"name": "Crash Bandicoot", "source": "Crash Bandicoot", "xPos": 56, "yPos": 59, "charUrl": "/chars/crash-bandicoot.png"},
+      {"name": "Pipo Monkey", "source": "Ape Escape", "xPos": 67, "yPos": 58, "charUrl": "/chars/pipo-monkey.png"},
+      {"name": "Spike", "source": "Ape Escape", "xPos": 71, "yPos": 56, "charUrl": "/chars/spike-ape-escape.png"},
+      {"name": "Ryu", "source": "Street Fighter", "xPos": 63, "yPos": 63, "charUrl": "/chars/ryu-street-fighter.png"},
+      {"name": "Alucard", "source": "Castlevania: Symphony of the Night", "xPos": 64, "yPos": 74, "charUrl": "/chars/alucard.png"},
+      {"name": "PaRappa", "source": "PaRappa the Rapper", "xPos": 38, "yPos": 75, "charUrl": "/chars/parappa.png"},
+      {"name": "Chop Chop Master Onion", "source": "PaRappa the Rapper", "xPos": 34, "yPos": 74, "charUrl": "/chars/chop-chop-master-onion.png"}
+    ]
   }
 ]
