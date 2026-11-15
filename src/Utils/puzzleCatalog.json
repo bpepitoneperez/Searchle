@@ -285,5 +285,21 @@
       {"name": "Toad", "source": "Mario Kart Wii", "xPos": 34, "yPos": 68, "charUrl": "/chars/toad.png"},
       {"name": "Travis Touchdown", "source": "No More Heroes", "xPos": 50, "yPos": 75, "charUrl": "/chars/travis-touchdown.png"}
     ]
+  },
+  {
+    "title": "Xbox Explosion",
+    "author": "Pierre Roussel",
+    "authorUrl": "https://www.etsy.com/shop/Angerinet",
+    "imgUrl": "/imgs/pierre-roussel-xbox-web.jpg",
+    "characters": [
+      {"name": "Raz", "source": "Psychonauts", "xPos": 37, "yPos": 35, "charUrl": "/chars/raz-psychonauts.png"},
+      {"name": "Ryu Hayabusa", "source": "Ninja Gaiden", "xPos": 85, "yPos": 42, "charUrl": "/chars/ryu-hayabusa.png"},
+      {"name": "Darth Revan", "source": "Star Wars: Knights of the Old Republic", "xPos": 39, "yPos": 51, "charUrl": "/chars/darth-revan.png"},
+      {"name": "Sam Fisher", "source": "Splinter Cell", "xPos": 44, "yPos": 50, "charUrl": "/chars/sam-fisher.png"},
+      {"name": "Orta", "source": "Panzer Dragoon Orta", "xPos": 18, "yPos": 56, "charUrl": "/chars/orta-panzer-dragoon.png"},
+      {"name": "Abe", "source": "Oddworld: Munch's Oddysee", "xPos": 48, "yPos": 70, "charUrl": "/chars/abe-oddworld.png"},
+      {"name": "Gum", "source": "Jet Set Radio Future", "xPos": 74, "yPos": 68, "charUrl": "/chars/gum-jsr.png"},
+      {"name": "Yo-Yo", "source": "Jet Set Radio Future", "xPos": 73, "yPos": 73, "charUrl": "/chars/yoyo-jsr.png"}
+    ]
   }
 ]
