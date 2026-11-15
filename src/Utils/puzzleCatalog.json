@@ -352,5 +352,17 @@
       {"name": "Atreus", "source": "God of War", "xPos": 65, "yPos": 58, "charUrl": "/chars/atreus.png"},
       {"name": "Ryu", "source": "Street Fighter V", "xPos": 48, "yPos": 76, "charUrl": "/chars/ryu-street-fighter.png"}
     ]
+  },
+  {
+    "imgUrl": "/imgs/pierre-roussel-xbox360-web.jpg",
+    "characters": [
+      {"name": "Little Sister", "source": "BioShock", "xPos": 45, "yPos": 51, "charUrl": "/chars/little-sister.png"},
+      {"name": "Frank West", "source": "Dead Rising", "xPos": 71, "yPos": 71, "charUrl": "/chars/frank-west.png"},
+      {"name": "Dog", "source": "Fable II", "xPos": 79, "yPos": 44, "charUrl": "/chars/fable-dog.png"},
+      {"name": "Balverine", "source": "Fable", "xPos": 73, "yPos": 45, "charUrl": "/chars/balverine.png"},
+      {"name": "Tali'Zorah", "source": "Mass Effect", "xPos": 14, "yPos": 44, "charUrl": "/chars/tali.png"},
+      {"name": "Garrus Vakarian", "source": "Mass Effect", "xPos": 10, "yPos": 46, "charUrl": "/chars/garrus.png"},
+      {"name": "Horstachio", "source": "Viva Piñata", "xPos": 26, "yPos": 57, "charUrl": "/chars/horstachio.png"}
+    ]
   }
 ]
