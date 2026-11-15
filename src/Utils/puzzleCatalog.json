@@ -408,5 +408,35 @@
       {"name": "Seadra", "source": "Pokemon", "xPos": 81, "yPos": 78, "charUrl": "/chars/seadra.png"},
       {"name": "Relicanth", "source": "Pokemon", "xPos": 52, "yPos": 45, "charUrl": "/chars/relicanth.png"}
     ]
+  },
+  {
+    "imgUrl": "/imgs/meme-supreme.jpg",
+    "characters": [
+      {"name": "Pikachu", "source": "Pokemon", "xPos": 41, "yPos": 74, "charUrl": "/chars/pikachu.png"},
+      {"name": "Goku", "source": "Dragon Ball", "xPos": 37, "yPos": 82, "charUrl": "/chars/goku.png"},
+      {"name": "Spider-Man", "source": "Marvel", "xPos": 49, "yPos": 82, "charUrl": "/chars/spider-man.png"},
+      {"name": "Homer Simpson", "source": "The Simpsons", "xPos": 76, "yPos": 71, "charUrl": "/chars/homer-simpson.png"},
+      {"name": "Bart Simpson", "source": "The Simpsons", "xPos": 89, "yPos": 35, "charUrl": "/chars/bart-simpson.png"},
+      {"name": "Donald Duck", "source": "Disney", "xPos": 53, "yPos": 78, "charUrl": "/chars/donald-duck.png"},
+      {"name": "Bugs Bunny", "source": "Looney Tunes", "xPos": 68, "yPos": 85, "charUrl": "/chars/bugs-bunny.png"},
+      {"name": "Skeletor", "source": "He-Man", "xPos": 71, "yPos": 46, "charUrl": "/chars/skeletor.png"},
+      {"name": "Shaggy", "source": "Scooby-Doo", "xPos": 67, "yPos": 71, "charUrl": "/chars/shaggy.png"},
+      {"name": "Bender", "source": "Futurama", "xPos": 22, "yPos": 93, "charUrl": "/chars/bender-futurama.png"},
+      {"name": "Fry", "source": "Futurama", "xPos": 80, "yPos": 58, "charUrl": "/chars/fry-futurama.png"},
+      {"name": "Mr. Krabs", "source": "SpongeBob SquarePants", "xPos": 13, "yPos": 93, "charUrl": "/chars/mr-krabs.png"},
+      {"name": "Handsome Squidward", "source": "SpongeBob SquarePants", "xPos": 31, "yPos": 71, "charUrl": "/chars/squidward.png"},
+      {"name": "Plankton", "source": "SpongeBob SquarePants", "xPos": 35, "yPos": 19, "charUrl": "/chars/plankton.png"},
+      {"name": "Finn the Human", "source": "Adventure Time", "xPos": 13, "yPos": 54, "charUrl": "/chars/finn-the-human.png"},
+      {"name": "Naruto", "source": "Naruto", "xPos": 3, "yPos": 70, "charUrl": "/chars/naruto.png"},
+      {"name": "Waluigi", "source": "Mario", "xPos": 33, "yPos": 48, "charUrl": "/chars/waluigi.png"},
+      {"name": "Morty", "source": "Rick and Morty", "xPos": 32, "yPos": 37, "charUrl": "/chars/morty-smith.png"},
+      {"name": "Courage", "source": "Courage the Cowardly Dog", "xPos": 47, "yPos": 31, "charUrl": "/chars/courage.png"},
+      {"name": "Ned Flanders", "source": "The Simpsons", "xPos": 9, "yPos": 15, "charUrl": "/chars/ned-flanders.png"},
+      {"name": "Creeper", "source": "Minecraft", "xPos": 20, "yPos": 12, "charUrl": "/chars/creeper.png"},
+      {"name": "Ness", "source": "EarthBound", "xPos": 38, "yPos": 16, "charUrl": "/chars/ness.png"},
+      {"name": "Yoshi", "source": "Mario", "xPos": 27, "yPos": 18, "charUrl": "/chars/yoshi.png"},
+      {"name": "SpongeBob", "source": "SpongeBob SquarePants", "xPos": 56, "yPos": 55, "charUrl": "/chars/spongebob.png"},
+      {"name": "Arnold", "source": "Hey Arnold!", "xPos": 82, "yPos": 49, "charUrl": "/chars/arnold.png"}
+    ]
   }
 ]

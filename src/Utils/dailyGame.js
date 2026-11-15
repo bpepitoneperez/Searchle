@@ -16,9 +16,10 @@ const puzzles = catalog.flatMap(({ characters, ...entry }) => {
 // New placements are appended to the end of the catalog and switched on by
 // adding an era that starts on a future Eastern date, so dates that have
 // already been served keep their puzzles. Each era uses the first `size`
-// placements. Its step must be coprime with `size` so every placement appears
-// once per cycle, and both `step` and `size - step` must be at least the
-// largest image's character count so the image changes every day.
+// placements. A `step` era must use a step coprime with `size` so every
+// placement appears once per cycle; a `spread` era (the default for new eras)
+// serves an evenly spaced order instead. Either way, the daily-image-change
+// test confirms the image never repeats on consecutive days.
 const rotationEras = [
   // 43 and 106 are coprime; the largest image then had 41 characters.
   { startsOn: lastLegacyGameDate, size: 106, step: 43 },
@@ -52,15 +53,58 @@ const rotationEras = [
   // 83 is the smallest step coprime with 268 that never repeats an image on
   // consecutive days at this size.
   { startsOn: Date.UTC(2026, 10, 29), size: 268, step: 83 },
+  // Once images were split across several catalog blocks, no step avoided
+  // repeating an image on consecutive days. `spread` eras instead serve a
+  // fixed order that spaces each image's placements evenly across the cycle.
+  { startsOn: Date.UTC(2026, 10, 30), size: 293, spread: true },
 ].reduce((eras, era) => {
   const previous = eras[eras.length - 1];
+  const startDay = era.startsOn / DAY_MS;
+  if (era.spread) {
+    const order = spreadOrder(era.size);
+    // Start on the first placement whose image differs from the day before.
+    const yesterday = previous && puzzles[eraIndex(previous, startDay - 1)].image;
+    const firstIndex = Math.max(0, order.findIndex(i => puzzles[i].image !== yesterday));
+    return [...eras, { ...era, order, firstIndex }];
+  }
   // Pick up where the previous era would have been on this era's first day.
-  const firstIndex = previous ? eraIndex(previous, era.startsOn / DAY_MS) : 0;
+  const firstIndex = previous ? eraIndex(previous, startDay) : 0;
   return [...eras, { ...era, firstIndex }];
 }, []);
 
-function eraIndex({ startsOn, size, step, firstIndex = 0 }, easternDay) {
+// Orders the first `size` placements so each image's placements are spaced
+// evenly: the k-th of an image's n placements sits at (k + 0.5) / n of the cycle.
+function spreadOrder(size) {
+  const seen = new Map();
+  const counts = new Map();
+  puzzles.slice(0, size).forEach(({ image }) => counts.set(image, (counts.get(image) || 0) + 1));
+  const order = puzzles.slice(0, size)
+    .map(({ image }, index) => {
+      const k = seen.get(image) || 0;
+      seen.set(image, k + 1);
+      return { index, at: (k + 0.5) / counts.get(image) };
+    })
+    .sort((a, b) => a.at - b.at || a.index - b.index)
+    .map(({ index }) => index);
+  // Even spacing can still put two of the same image side by side where their
+  // positions tie, so pull the next different image forward (wrapping around).
+  const imageAt = i => puzzles[order[(i + size) % size]].image;
+  for (let i = 0; i < size; i++) {
+    if (imageAt(i) !== imageAt(i - 1)) continue;
+    for (let j = i + 1; j < i + size; j++) {
+      if (imageAt(j) !== imageAt(i - 1) && imageAt(j - 1) !== imageAt(i) && imageAt(j + 1) !== imageAt(i)) {
+        const a = i % size, b = j % size;
+        [order[a], order[b]] = [order[b], order[a]];
+        break;
+      }
+    }
+  }
+  return order;
+}
+
+function eraIndex({ startsOn, size, step, order, firstIndex = 0 }, easternDay) {
   const days = easternDay - startsOn / DAY_MS;
+  if (order) return order[(((firstIndex + days) % size) + size) % size];
   return (((firstIndex + days * step) % size) + size) % size;
 }
 
